@@ -1,0 +1,17 @@
+{
+    "Name": "LittleThings",
+    "Enabled": true,
+
+    "Version": "1.4.0-001R",
+    "Description": "Fix some little annoyances and change minor things.",
+    "Author": "Mad",
+	
+	"DLL": "LittleThings.dll",
+
+	"Settings": {
+        "ReserveEnable": true,
+        "ReserveBasePercentage": 25,
+
+		"DFAsRemoveEntrenched": true
+    },
+}

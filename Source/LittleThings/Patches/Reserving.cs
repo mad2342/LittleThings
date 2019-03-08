@@ -1,16 +1,18 @@
 ﻿using System;
 using Harmony;
 
-namespace LittleFixes.Patches
+namespace LittleThings.Patches
 {
     // Enable Reserve for AI
     [HarmonyPatch(typeof(BehaviorTree), "GetBehaviorVariableValue")]
     public static class BehaviorTree_GetBehaviorVariableValue_Patch
     {
+        /*
         public static bool Prepare()
         {
-            return LittleFixes.Settings.ReserveEnable;
+            return LittleThings.Settings.ReserveEnable;
         }
+        */
 
         public static void Postfix(BehaviorTree __instance, ref BehaviorVariableValue __result, BehaviorVariableName name)
         {
@@ -24,7 +26,7 @@ namespace LittleFixes.Patches
                 else if (name == BehaviorVariableName.Float_ReserveBasePercentage)
                 {
                     Logger.LogLine("[BehaviorTree_GetBehaviorVariableValue_POSTFIX] Overriding BehaviorVariableName.Bool_ReserveEnabled: 25f");
-                    __result.FloatVal = LittleFixes.Settings.ReserveBasePercentage;
+                    __result.FloatVal = LittleThings.Settings.ReserveBasePercentage;
                 }
             }
             catch (Exception e)

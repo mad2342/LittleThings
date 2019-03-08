@@ -4,9 +4,9 @@ using System;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace LittleFixes
+namespace LittleThings
 {
-    public class LittleFixes
+    public static class LittleThings
     {
         public static string LogPath;
         public static string ModDirectory;
@@ -19,10 +19,10 @@ namespace LittleFixes
         {
             ModDirectory = directory;
 
-            LogPath = Path.Combine(ModDirectory, "LittleFixes.log");
-            File.CreateText(LittleFixes.LogPath);
+            LogPath = Path.Combine(ModDirectory, "LittleThings.log");
+            File.CreateText(LittleThings.LogPath);
 
-            var harmony = HarmonyInstance.Create("de.mad.LittleFixes");
+            var harmony = HarmonyInstance.Create("de.mad.LittleThings");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
             try

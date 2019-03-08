@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace LittleFixes
+namespace LittleThings
 {
     public static class ReflectionHelper
     {
