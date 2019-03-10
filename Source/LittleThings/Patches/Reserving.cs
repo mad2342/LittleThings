@@ -3,35 +3,36 @@ using Harmony;
 
 namespace LittleThings.Patches
 {
-    // Enable Reserve for AI
-    [HarmonyPatch(typeof(BehaviorTree), "GetBehaviorVariableValue")]
-    public static class BehaviorTree_GetBehaviorVariableValue_Patch
+    class Reserving
     {
-        /*
-        public static bool Prepare()
+        // Enable Reserve for AI
+        [HarmonyPatch(typeof(BehaviorTree), "GetBehaviorVariableValue")]
+        public static class BehaviorTree_GetBehaviorVariableValue_Patch
         {
-            return LittleThings.Settings.ReserveEnable;
-        }
-        */
-
-        public static void Postfix(BehaviorTree __instance, ref BehaviorVariableValue __result, BehaviorVariableName name)
-        {
-            try
+            public static bool Prepare()
             {
-                if (name == BehaviorVariableName.Bool_ReserveEnabled)
-                {
-                    Logger.LogLine("[BehaviorTree_GetBehaviorVariableValue_POSTFIX] Overriding BehaviorVariableName.Bool_ReserveEnabled: true");
-                    __result.BoolVal = true;
-                }
-                else if (name == BehaviorVariableName.Float_ReserveBasePercentage)
-                {
-                    Logger.LogLine("[BehaviorTree_GetBehaviorVariableValue_POSTFIX] Overriding BehaviorVariableName.Bool_ReserveEnabled: 25f");
-                    __result.FloatVal = LittleThings.Settings.ReserveBasePercentage;
-                }
+                return LittleThings.Settings.ReserveEnable;
             }
-            catch (Exception e)
+
+            public static void Postfix(BehaviorTree __instance, ref BehaviorVariableValue __result, BehaviorVariableName name)
             {
-                Logger.LogError(e);
+                try
+                {
+                    if (name == BehaviorVariableName.Bool_ReserveEnabled)
+                    {
+                        Logger.LogLine("[BehaviorTree_GetBehaviorVariableValue_POSTFIX] Overriding BehaviorVariableName.Bool_ReserveEnabled: true");
+                        __result.BoolVal = true;
+                    }
+                    else if (name == BehaviorVariableName.Float_ReserveBasePercentage)
+                    {
+                        Logger.LogLine("[BehaviorTree_GetBehaviorVariableValue_POSTFIX] Overriding BehaviorVariableName.Bool_ReserveEnabled: 25f");
+                        __result.FloatVal = LittleThings.Settings.ReserveBasePercentage;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Logger.LogError(e);
+                }
             }
         }
     }

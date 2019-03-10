@@ -3,38 +3,41 @@ using Harmony;
 
 namespace LittleThings.Patches
 {
-    [HarmonyPatch(typeof(MechDFASequence), "OnMeleeComplete")]
-    public static class MechDFASequence_OnMeleeComplete_Patch
+    class DFA
     {
-        /*
-        public static bool Prepare()
+        // DFAs remove Entrenched
+        [HarmonyPatch(typeof(MechDFASequence), "OnMeleeComplete")]
+        public static class MechDFASequence_OnMeleeComplete_Patch
         {
-            return LittleThings.Settings.DFAsRemoveEntrenched;
-        }
-        */
-
-        public static void Prefix(MechDFASequence __instance)
-        {
-            // Get melee target
-            ICombatant DFATarget = (ICombatant)AccessTools.Property(typeof(MechDFASequence), "DFATarget").GetValue(__instance, null);
-
-            if (DFATarget is Mech TargetMech)
+            public static bool Prepare()
             {
-                // Remove Entrenched
-                if (TargetMech.IsEntrenched)
-                {
-                    Logger.LogLine("[MechDFASequence_OnMeleeComplete_PREFIX] Removing Entrenched from target");
-                    TargetMech.IsEntrenched = false;
-                    TargetMech.Combat.MessageCenter.PublishMessage(new FloatieMessage(TargetMech.GUID, TargetMech.GUID, "LOST: ENTRENCHED", FloatieMessage.MessageNature.Debuff));
-                }
+                return LittleThings.Settings.DFAsRemoveEntrenched;
+            }
 
-                // Additional stability damage?
+            public static void Prefix(MechDFASequence __instance, ref MessageCenterMessage message)
+            {
+                // Only remove entrenched if the attach actually did hit?
                 /*
-                float additionalStabilityDamage = __instance.OwningMech.MechDef.Chassis.MeleeInstability / 2;
-
-                Logger.LogLine("[MechDFASequence_OnMeleeComplete_PREFIX] Apply additional stability damage from charging (50% of OwningMech.MechDef.Chassis.MeleeInstability): " + additionalStabilityDamage);
-                TargetMech.AddAbsoluteInstability(additionalStabilityDamage, StabilityChangeSource.NotSet, __instance.owningActor.GUID);
+                AttackCompleteMessage attackCompleteMessage = (AttackCompleteMessage)message;
+                if (attackCompleteMessage.attackSequence.attackCompletelyMissed)
+                {
+                    return;
+                }
                 */
+
+                // Get melee target
+                ICombatant DFATarget = (ICombatant)AccessTools.Property(typeof(MechDFASequence), "DFATarget").GetValue(__instance, null);
+
+                if (DFATarget is Mech TargetMech)
+                {
+                    // Remove Entrenched
+                    if (TargetMech.IsEntrenched)
+                    {
+                        Logger.LogLine("[MechDFASequence_OnMeleeComplete_PREFIX] Removing Entrenched from target");
+                        TargetMech.IsEntrenched = false;
+                        TargetMech.Combat.MessageCenter.PublishMessage(new FloatieMessage(TargetMech.GUID, TargetMech.GUID, "LOST: ENTRENCHED", FloatieMessage.MessageNature.Debuff));
+                    }
+                }
             }
         }
     }

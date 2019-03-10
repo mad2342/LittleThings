@@ -8,8 +8,8 @@ namespace LittleThings
 {
     public static class LittleThings
     {
-        public static string LogPath;
-        public static string ModDirectory;
+        internal static string LogPath;
+        internal static string ModDirectory;
         internal static Settings Settings;
 
         // BEN: Debug (0: nothing, 1: errors, 2:all)
@@ -22,9 +22,6 @@ namespace LittleThings
             LogPath = Path.Combine(ModDirectory, "LittleThings.log");
             File.CreateText(LittleThings.LogPath);
 
-            var harmony = HarmonyInstance.Create("de.mad.LittleThings");
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
-
             try
             {
                 Settings = JsonConvert.DeserializeObject<Settings>(settings);
@@ -33,6 +30,10 @@ namespace LittleThings
             {
                 Settings = new Settings();
             }
+
+            // Harmony calls need to go last here because their Prepare() methods directly check Settings...
+            HarmonyInstance harmony = HarmonyInstance.Create("de.mad.LittleThings");
+            harmony.PatchAll(Assembly.GetExecutingAssembly());
         }
     }
 }
