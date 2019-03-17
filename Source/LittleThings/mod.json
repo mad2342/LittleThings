@@ -10,7 +10,7 @@
 
 	"Settings": {
         "ReserveEnable": true,
-        "ReserveBasePercentage": 25,
+        "ReserveBasePercentage": 12.5,
 
 		"DFAsRemoveEntrenched": true
     }

@@ -25,7 +25,7 @@ namespace LittleThings.Patches
                     }
                     else if (name == BehaviorVariableName.Float_ReserveBasePercentage)
                     {
-                        Logger.LogLine("[BehaviorTree_GetBehaviorVariableValue_POSTFIX] Overriding BehaviorVariableName.Bool_ReserveEnabled: 25f");
+                        Logger.LogLine("[BehaviorTree_GetBehaviorVariableValue_POSTFIX] Overriding BehaviorVariableName.Float_ReserveBasePercentage: " + LittleThings.Settings.ReserveBasePercentage);
                         __result.FloatVal = LittleThings.Settings.ReserveBasePercentage;
                     }
                 }
