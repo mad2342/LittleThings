@@ -9,7 +9,7 @@
 	"DLL": "LittleThings.dll",
 
 	"Settings": {
-        "ReserveEnable": true,
+        "ReserveEnable": false,
         "ReserveBasePercentage": 12.5,
 
 		"DFAsRemoveEntrenched": true
