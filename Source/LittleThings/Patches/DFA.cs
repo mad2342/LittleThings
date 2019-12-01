@@ -37,6 +37,10 @@ namespace LittleThings.Patches
                         TargetMech.IsEntrenched = false;
                         TargetMech.Combat.MessageCenter.PublishMessage(new FloatieMessage(TargetMech.GUID, TargetMech.GUID, "LOST: ENTRENCHED", FloatieMessage.MessageNature.Debuff));
                     }
+                    else
+                    {
+                        Logger.LogLine("[MechDFASequence_OnMeleeComplete_PREFIX] Target wasn't entrenched");
+                    }
                 }
             }
         }
