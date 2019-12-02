@@ -48,13 +48,13 @@ namespace LittleThings
 
         public static void Postfix(SimGameState __instance, StatCollection ___companyStats)
         {
-            string[] MechsToAdd = new string[] { "mechdef_warhammer_WHM-6R" };
+            string[] MechsToAdd = new string[] { "mechdef_warhammer_WHM-6Rb", "mechdef_locust_LCT-1Vb_DAMAGED" };
             string[] WeaponsToAdd = new string[] { "Weapon_PPC_PPCER_0-STOCK", "Weapon_Laser_SmallLaserPulse_0-STOCK" };
             string[] UpgradesToAdd = new string[] { "Gear_Cockpit_StarCorps_Advanced" };
             string[] HeatsinksToAdd = new string[] { "Gear_HeatSink_Generic_Double" };
             string[] AmmoToAdd = new string[] { "Ammo_AmmunitionBox_Generic_GAUSS" };
             int fundsToAdd = 1000000;
-            int amount = 3;
+            int amount = 15;
 
             foreach (string Id in MechsToAdd)
             {
