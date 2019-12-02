@@ -8,5 +8,7 @@
         public bool DFAsRemoveEntrenched = true;
 
         public bool MoraleFixes = true;
+
+        public bool AddInventory = true;
     }
 }
