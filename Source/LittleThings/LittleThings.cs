@@ -4,6 +4,7 @@ using System;
 using Newtonsoft.Json;
 using System.IO;
 using BattleTech;
+using System.Collections.Generic;
 
 namespace LittleThings
 {
@@ -48,13 +49,13 @@ namespace LittleThings
 
         public static void Postfix(SimGameState __instance, StatCollection ___companyStats)
         {
-            string[] MechsToAdd = new string[] { "mechdef_warhammer_WHM-6Rb", "mechdef_locust_LCT-1Vb_DAMAGED" };
-            string[] WeaponsToAdd = new string[] { "Weapon_PPC_PPCER_0-STOCK", "Weapon_Laser_SmallLaserPulse_0-STOCK" };
-            string[] UpgradesToAdd = new string[] { "Gear_Cockpit_StarCorps_Advanced" };
-            string[] HeatsinksToAdd = new string[] { "Gear_HeatSink_Generic_Double" };
-            string[] AmmoToAdd = new string[] { "Ammo_AmmunitionBox_Generic_GAUSS" };
-            int fundsToAdd = 1000000;
-            int amount = 15;
+            List<string> MechsToAdd = LittleThings.Settings.AddInventoryMechs;
+            List<string> WeaponsToAdd = LittleThings.Settings.AddInventoryWeapons;
+            List<string> UpgradesToAdd = LittleThings.Settings.AddInventoryUpgrades;
+            List<string> HeatsinksToAdd = LittleThings.Settings.AddInventoryHeatsinks;
+            List<string> AmmoToAdd = LittleThings.Settings.AddInventoryAmmo;
+            int fundsToAdd = LittleThings.Settings.AddInventoryFunds;
+            int amount = 1;
 
             foreach (string Id in MechsToAdd)
             {
@@ -107,6 +108,7 @@ namespace LittleThings
 
             // Funds
             __instance.AddFunds(fundsToAdd, null, true);
+            Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + fundsToAdd + "cbills to inventory.");
         }
     }
 }
