@@ -16,7 +16,7 @@
 
 		"MoraleFixes": true,
 
-		"AddInventory": true,
+		"AddInventory": false,
 		"AddInventoryMechs": [
 			"mechdef_warhammer_WHM-6Rb",
 			"mechdef_annihilator_ANH-1A"
