@@ -1,70 +1,29 @@
 {
-    "Name": "LittleThings",
-    "Enabled": true,
+  "Name": "LittleThings",
+  "Enabled": true,
 
-    "Version": "1.8.0-001R",
-    "Description": "Fix some little annoyances and change minor things.",
-    "Author": "Mad",
+  "Version": "1.8.0-001R",
+  "Description": "Fix some little annoyances and change minor things.",
+  "Author": "Mad",
 	
-	"DLL": "LittleThings.dll",
+  "DLL": "LittleThings.dll",
 
-	"Settings": {
-        "ReserveEnable": false,
-        "ReserveBasePercentage": 12.5,
+  "Settings": {
+    "ReserveEnable": false,
+    "ReserveBasePercentage": 12.5,
 
-		"DFAsRemoveEntrenched": true,
+    "DFAsRemoveEntrenched": true,
 
-		"MoraleFixes": true,
+    "MoraleFixes": true,
 
-		"AddInventory": false,
-		"AddInventoryMechs": [
-			"mechdef_warhammer_WHM-6Rb",
-			"mechdef_annihilator_ANH-1A"
-		],
-		"AddInventoryWeapons": [
-			"Weapon_Gauss_Gauss_0-STOCK",
-			"Weapon_Laser_LargeLaserER_0-STOCK",
-			"Weapon_Laser_LargeLaserPulse_0-STOCK",
-			"Weapon_Laser_MediumLaserER_0-STOCK",
-			"Weapon_Laser_MediumLaserPulse_0-STOCK",
-			"Weapon_Laser_SmallLaserER_0-STOCK",
-			"Weapon_Laser_SmallLaserPulse_0-STOCK",
-			"Weapon_PPC_PPCER_0-STOCK",
-			"Weapon_Autocannon_LB2X_0-STOCK",
-			"Weapon_Autocannon_LB5X_0-STOCK",
-			"Weapon_Autocannon_LB10X_0-STOCK",
-			"Weapon_Autocannon_LB20X_0-STOCK",
-			"Weapon_Autocannon_UAC2_0-STOCK",
-			"Weapon_Autocannon_UAC5_0-STOCK",
-			"Weapon_Autocannon_UAC10_0-STOCK",
-			"Weapon_Autocannon_UAC20_0-STOCK",
-			"Weapon_Inferno_Inferno2_0-STOCK",
-			"Weapon_PPC_PPCSnub_0-STOCK"
-		],
-		"AddInventoryUpgrades": [
-			"Gear_Cockpit_Ceres_Metals_Braced",
-			"Gear_Cockpit_Majesty_M_M_60KL",
-			"Gear_Cockpit_StarCorps_Advanced"
-		],
-		"AddInventoryHeatsinks": [
-			"Gear_HeatSink_Generic_Double",
-			"Gear_HeatSink_Generic_Double",
-			"Gear_HeatSink_Generic_Double",
-			"Gear_HeatSink_Generic_Double",
-			"Gear_HeatSink_Generic_Double",
-			"Gear_HeatSink_Generic_Double",
-			"Gear_HeatSink_Generic_Double",
-			"Gear_HeatSink_Generic_Double",
-			"Gear_HeatSink_Generic_Double",
-			"Gear_HeatSink_Generic_Double"
-		],
-		"AddInventoryAmmo": [
-			"Ammo_AmmunitionBox_Generic_GAUSS",
-			"Ammo_AmmunitionBox_Generic_LB2X",
-			"Ammo_AmmunitionBox_Generic_LB5X",
-			"Ammo_AmmunitionBox_Generic_LB10X",
-			"Ammo_AmmunitionBox_Generic_LB20X"
-		],
-		"AddInventoryFunds": 1000000
-    }
+    "TooltipFixes": true,
+
+    "LogComponentLists": true,
+		        
+    "AddInventory": true,
+    "AddInventoryMechs": false,
+    "AddInventoryComponents": true,
+    "AddInventoryComponentCount": 10,
+    "AddInventoryFunds": 3000000
+  }
 }

@@ -19,13 +19,17 @@ namespace LittleThings
             }
         }
 
-        public static void LogLine(String line)
+        public static void LogLine(String line, bool showPrefix = true)
         {
             if (LittleThings.DebugLevel >= 2)
             {
                 using (StreamWriter writer = new StreamWriter(filePath, true))
                 {
-                    var prefix = "[LittleThings @ " + DateTime.Now.ToString() + "]";
+                    string prefix = "";
+                    if (showPrefix)
+                    {
+                        prefix = "[LittleThings @ " + DateTime.Now.ToString() + "]";
+                    }
                     writer.WriteLine(prefix + line);
                 }
             }
