@@ -122,7 +122,7 @@ namespace LittleThings
 
 
 
-                // Mechs
+                // Collect Mechs
                 Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Collecting all valid Mechs");
                 foreach (string chassisDefId in ChassisDefs.Keys)
                 {
@@ -134,30 +134,7 @@ namespace LittleThings
                 }
                 mechDefIds.Sort();
 
-                if (LittleThings.Settings.AddInventoryMechs)
-                {
-                    // Custom list given?
-                    if (LittleThings.Settings.AddInventoryMechsList.Any())
-                    {
-                        foreach (string id in LittleThings.Settings.AddInventoryMechsList)
-                        {
-                            __instance.AddMechByID(id, true);
-                            Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + id + " to inventory.");
-                        }
-                    }
-                    else
-                    {
-                        foreach (string id in mechDefIds)
-                        {
-                            __instance.AddMechByID(id, true);
-                            Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + id + " to inventory.");
-                        }
-                    }
-                }
-
-
-
-                // Weapons
+                // Collect Weapons
                 Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Collecting all valid Weapons");
                 foreach (string id in WeaponDefs.Keys)
                 {
@@ -168,23 +145,7 @@ namespace LittleThings
                 }
                 weaponDefIds.Sort();
 
-                if (LittleThings.Settings.AddInventoryComponents)
-                {
-                    foreach (string id in weaponDefIds)
-                    {
-                        int i = 0;
-                        while (i < LittleThings.Settings.AddInventoryComponentCount)
-                        {
-                            __instance.AddItemStat(id, typeof(WeaponDef), false);
-                            i++;
-                        }
-                        Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + id + "(" + LittleThings.Settings.AddInventoryComponentCount + ") to inventory.");
-                    }
-                }
-
-
-
-                // Upgrades
+                // Collect Upgrades
                 Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Collecting all valid Upgrades");
                 foreach (string id in UpgradeDefs.Keys)
                 {
@@ -195,23 +156,7 @@ namespace LittleThings
                 }
                 upgradeDefIds.Sort();
 
-                if (LittleThings.Settings.AddInventoryComponents)
-                {
-                    foreach (string id in upgradeDefIds)
-                    {
-                        int i = 0;
-                        while (i < LittleThings.Settings.AddInventoryComponentCount)
-                        {
-                            __instance.AddItemStat(id, typeof(UpgradeDef), false);
-                            i++;
-                        }
-                        Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + id + "(" + LittleThings.Settings.AddInventoryComponentCount + ") to inventory.");
-                    }
-                }
-
-
-
-                // Heatsinks
+                // Collect Heatsinks
                 Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Collecting all valid Heatsinks");
                 foreach (string id in HeatSinkDefs.Keys)
                 {
@@ -222,24 +167,7 @@ namespace LittleThings
                 }
                 heatSinkDefIds.Sort();
 
-                if (LittleThings.Settings.AddInventoryComponents)
-                {
-                    foreach (string id in heatSinkDefIds)
-                    {
-
-                        int i = 0;
-                        while (i < LittleThings.Settings.AddInventoryComponentCount)
-                        {
-                            __instance.AddItemStat(id, typeof(HeatSinkDef), false);
-                            i++;
-                        }
-                        Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + id + "(" + LittleThings.Settings.AddInventoryComponentCount + ") to inventory.");
-                    }
-                }
-
-
-
-                // Ammunition
+                // Collect Ammunition
                 Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Collecting all valid AmmunitionBoxes");
                 foreach (string id in AmmoBoxDefs.Keys)
                 {
@@ -250,28 +178,101 @@ namespace LittleThings
                 }
                 ammoBoxDefIds.Sort();
 
-                if (LittleThings.Settings.AddInventoryComponents)
+
+
+                // Add Inventory
+                if (LittleThings.Settings.AddInventory)
                 {
-                    foreach (string id in ammoBoxDefIds)
+                    // Add Mechs
+                    if (LittleThings.Settings.AddInventoryMechs)
                     {
-
-                        int i = 0;
-                        while (i < LittleThings.Settings.AddInventoryComponentCount)
+                        // Custom list given?
+                        if (LittleThings.Settings.AddInventoryMechsList.Any())
                         {
-                            __instance.AddItemStat(id, typeof(AmmunitionBoxDef), false);
-                            i++;
+                            foreach (string id in LittleThings.Settings.AddInventoryMechsList)
+                            {
+                                __instance.AddMechByID(id, true);
+                                Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + id + " to inventory.");
+                            }
                         }
-                        Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + id + "(" + LittleThings.Settings.AddInventoryComponentCount + ") to inventory.");
+                        else
+                        {
+                            foreach (string id in mechDefIds)
+                            {
+                                __instance.AddMechByID(id, true);
+                                Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + id + " to inventory.");
+                            }
+                        }
                     }
-                }
 
+                    // Add Weapons
+                    if (LittleThings.Settings.AddInventoryComponents)
+                    {
+                        foreach (string id in weaponDefIds)
+                        {
+                            int i = 0;
+                            while (i < LittleThings.Settings.AddInventoryComponentCount)
+                            {
+                                __instance.AddItemStat(id, typeof(WeaponDef), false);
+                                i++;
+                            }
+                            Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + id + "(" + LittleThings.Settings.AddInventoryComponentCount + ") to inventory.");
+                        }
+                    }
 
+                    // Add upgrades
+                    if (LittleThings.Settings.AddInventoryComponents)
+                    {
+                        foreach (string id in upgradeDefIds)
+                        {
+                            int i = 0;
+                            while (i < LittleThings.Settings.AddInventoryComponentCount)
+                            {
+                                __instance.AddItemStat(id, typeof(UpgradeDef), false);
+                                i++;
+                            }
+                            Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + id + "(" + LittleThings.Settings.AddInventoryComponentCount + ") to inventory.");
+                        }
+                    }
 
-                // Funds
-                if (LittleThings.Settings.AddInventoryFunds > 0)
-                {
-                    __instance.AddFunds(LittleThings.Settings.AddInventoryFunds, null, true);
-                    Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + LittleThings.Settings.AddInventoryFunds + " C-Bills to inventory.");
+                    //Add Heatsinks
+                    if (LittleThings.Settings.AddInventoryComponents)
+                    {
+                        foreach (string id in heatSinkDefIds)
+                        {
+
+                            int i = 0;
+                            while (i < LittleThings.Settings.AddInventoryComponentCount)
+                            {
+                                __instance.AddItemStat(id, typeof(HeatSinkDef), false);
+                                i++;
+                            }
+                            Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + id + "(" + LittleThings.Settings.AddInventoryComponentCount + ") to inventory.");
+                        }
+                    }
+
+                    // Add Ammunition
+                    if (LittleThings.Settings.AddInventoryComponents)
+                    {
+                        foreach (string id in ammoBoxDefIds)
+                        {
+
+                            int i = 0;
+                            while (i < LittleThings.Settings.AddInventoryComponentCount)
+                            {
+                                __instance.AddItemStat(id, typeof(AmmunitionBoxDef), false);
+                                i++;
+                            }
+                            Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + id + "(" + LittleThings.Settings.AddInventoryComponentCount + ") to inventory.");
+                        }
+                    }
+
+                    // Add Funds
+                    if (LittleThings.Settings.AddInventoryFunds > 0)
+                    {
+                        __instance.AddFunds(LittleThings.Settings.AddInventoryFunds, null, true);
+                        Logger.LogLine("[SimGameState__OnAttachUXComplete_POSTFIX] Added " + LittleThings.Settings.AddInventoryFunds + " C-Bills to inventory.");
+                    }
                 }
 
 

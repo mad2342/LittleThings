@@ -18,7 +18,7 @@
 
         "TooltipFixes": true,
 
-        "AddInventory": true,
+        "AddInventory": false,
         "AddInventoryMechs": true,
         "AddInventoryMechsList": [
             "mechdef_banshee_BNC-3S",
