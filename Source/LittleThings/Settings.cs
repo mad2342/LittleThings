@@ -13,11 +13,13 @@ namespace LittleThings
 
         public bool TooltipFixes = true;
 
-        public bool LogComponentLists = true;
-        public bool AddInventory = true;
+        public bool AddInventory = false;
         public bool AddInventoryMechs = false;
+        public List<string> AddInventoryMechsList = new List<string>();
         public bool AddInventoryComponents = true;
         public int AddInventoryComponentCount = 10;
         public int AddInventoryFunds = 3000000;
+
+        public bool LogComponentLists = true;
     }
 }

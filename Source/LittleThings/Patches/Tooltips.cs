@@ -21,13 +21,23 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[TooltipPrefab_Equipment_SetData_POSTFIX] In");
+                    Logger.LogLine("[TooltipPrefab_Equipment_SetData_POSTFIX] Fixing bonusesText");
 
                     MechComponentDef mechComponentDef = (MechComponentDef)data;
                     if (string.IsNullOrEmpty(mechComponentDef.BonusValueA) && string.IsNullOrEmpty(mechComponentDef.BonusValueB))
                     {
                         ___bonusesText.SetText("-", Array.Empty<object>());
                     }
+                    // BEN: Added these
+                    else if (!string.IsNullOrEmpty(mechComponentDef.BonusValueA) && string.IsNullOrEmpty(mechComponentDef.BonusValueB))
+                    {
+                        ___bonusesText.SetText(mechComponentDef.BonusValueA, Array.Empty<object>());
+                    }
+                    else if (string.IsNullOrEmpty(mechComponentDef.BonusValueA) && !string.IsNullOrEmpty(mechComponentDef.BonusValueB))
+                    {
+                        ___bonusesText.SetText(mechComponentDef.BonusValueB, Array.Empty<object>());
+                    }
+                    // :NEB
                     else
                     {   
                         // BEN: Added missing comma
