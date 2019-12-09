@@ -3,7 +3,7 @@ using Harmony;
 
 namespace LittleThings.Patches
 {
-    class Reserving
+    class Reserve
     {
         // Enable Reserve for AI
         [HarmonyPatch(typeof(BehaviorTree), "GetBehaviorVariableValue")]
