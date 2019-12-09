@@ -19,7 +19,7 @@
         "DFAsRemoveEntrenched": true,
 
         "AddInventory": false,
-        "AddInventoryMechs": true,
+        "AddInventoryMechs": false,
         "AddInventoryMechsList": [
             "mechdef_banshee_BNC-3S",
             "mechdef_blackjack_BJ-1DB",
