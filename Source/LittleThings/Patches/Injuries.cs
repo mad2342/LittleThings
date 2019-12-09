@@ -18,7 +18,7 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[Pilot_InitAbilities_PREFIX] ModifyStats: " + ModifyStats);
+                    Logger.LogLine("[Pilot_InitAbilities_PREFIX] ModifyStats (" + __instance.Callsign + "): " + ModifyStats);
                     Logger.LogLine("[Pilot_InitAbilities_PREFIX] __instance.Guts: " + __instance.Guts);
                     Logger.LogLine("[Pilot_InitAbilities_PREFIX] __instance.Health: " + __instance.Health);
 
