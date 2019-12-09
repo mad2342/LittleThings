@@ -9,14 +9,14 @@
     "DLL": "LittleThings.dll",
 
     "Settings": {
+        "MoraleFixes": true,
+        "TooltipFixes": true,
+        "InjuryFixes": true,
+
         "ReserveEnable": false,
         "ReserveBasePercentage": 12.5,
 
         "DFAsRemoveEntrenched": true,
-
-        "MoraleFixes": true,
-
-        "TooltipFixes": true,
 
         "AddInventory": false,
         "AddInventoryMechs": true,
@@ -55,6 +55,6 @@
         "AddInventoryComponentCount": 10,
         "AddInventoryFunds": 3000000,
 
-        "LogComponentLists": true
+        "LogComponentLists": false
     }
 }

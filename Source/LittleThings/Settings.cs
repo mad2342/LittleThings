@@ -4,14 +4,14 @@ namespace LittleThings
 {
     internal class Settings
     {
+        public bool MoraleFixes = true;
+        public bool TooltipFixes = true;
+        public bool InjuryFixes = true;
+
         public bool ReserveEnable = true;
         public float ReserveBasePercentage = 25f;
 
         public bool DFAsRemoveEntrenched = true;
-
-        public bool MoraleFixes = true;
-
-        public bool TooltipFixes = true;
 
         public bool AddInventory = false;
         public bool AddInventoryMechs = false;

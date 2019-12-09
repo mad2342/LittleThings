@@ -51,6 +51,7 @@
     <Compile Include="LittleThings.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Patches\DFA.cs" />
+    <Compile Include="Patches\Injuries.cs" />
     <Compile Include="Patches\Morale.cs" />
     <Compile Include="Patches\Reserve.cs" />
     <Compile Include="Patches\Tooltips.cs" />
@@ -61,6 +62,7 @@
   <ItemGroup>
     <None Include="mod.json" />
     <None Include="README.md" />
+    <None Include="StreamingAssets\data\abilities\**\*.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
@@ -69,6 +71,7 @@ xcopy $(TargetPath) $(SolutionDir)..\Release\$(TargetName)\ /Y
 xcopy $(ProjectDir)mod.json $(SolutionDir)..\Release\$(TargetName)\ /Y
 xcopy $(ProjectDir)README.md $(SolutionDir)..\Release\$(TargetName)\ /Y
 xcopy $(ProjectDir)README.md $(SolutionDir)..\ /Y
+xcopy $(ProjectDir)StreamingAssets\data\abilities\Traits\* $(SolutionDir)..\Release\$(TargetName)\StreamingAssets\data\abilities\Traits\ /Y /S
     </PostBuildEvent>
   </PropertyGroup>
 </Project>
