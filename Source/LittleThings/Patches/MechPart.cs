@@ -24,6 +24,10 @@ namespace LittleThings.Patches
             {
                 try
                 {
+                    LittleThings.DebugLevel = 1;
+
+
+
                     if (item.Type != ShopItemType.MechPart)
                     {
                         //Logger.LogLine("[Shop_GetItemDescription_POSTFIX] item.Type: " + item.Type.ToString());
@@ -52,6 +56,10 @@ namespace LittleThings.Patches
 
                     Logger.LogLine("[Shop_GetItemDescription_POSTFIX] __result.Cost AFTER: " + __result.Cost);
                     Logger.LogLine("---");
+
+
+
+                    LittleThings.DebugLevel = 2;
                 }
                 catch (Exception e)
                 {
