@@ -12,6 +12,8 @@
         "MoraleFixes": true,
         "TooltipFixes": true,
         "InjuryFixes": true,
+        "AdjustMechPartCost": true,
+        "AdjustMechPartCostMultiplier": 0.8,
 
         "ReserveEnable": false,
         "ReserveBasePercentage": 12.5,
