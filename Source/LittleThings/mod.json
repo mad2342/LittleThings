@@ -12,7 +12,7 @@
         "MoraleFixes": true,
         "UIFixes": true,
         "DisableTutorials": true,
-        "InjuryFixes": true,
+        "InjuryFixes": false,
         "AdjustMechPartCost": true,
         "AdjustMechPartCostMultiplier": 0.8,
 
