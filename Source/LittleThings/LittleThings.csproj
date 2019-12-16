@@ -57,6 +57,7 @@
     <Compile Include="Patches\Morale.cs" />
     <Compile Include="Patches\Reserve.cs" />
     <Compile Include="Patches\Tooltips.cs" />
+    <Compile Include="Patches\TutorialPopups.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectionHelper.cs" />
     <Compile Include="Settings.cs" />
