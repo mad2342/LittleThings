@@ -52,6 +52,7 @@
     <Compile Include="Logger.cs" />
     <Compile Include="Patches\DFA.cs" />
     <Compile Include="Patches\Injuries.cs" />
+    <Compile Include="Patches\InventoryItem.cs" />
     <Compile Include="Patches\MechPart.cs" />
     <Compile Include="Patches\Morale.cs" />
     <Compile Include="Patches\Reserve.cs" />

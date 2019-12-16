@@ -10,7 +10,7 @@
 
     "Settings": {
         "MoraleFixes": true,
-        "TooltipFixes": true,
+        "UIFixes": true,
         "InjuryFixes": true,
         "AdjustMechPartCost": true,
         "AdjustMechPartCostMultiplier": 0.8,
