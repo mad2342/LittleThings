@@ -13,6 +13,7 @@
         "UIFixes": true,
         "DisableTutorials": true,
         "InjuryFixes": false,
+        "FixInspire": true,
         "AdjustMechPartCost": true,
         "AdjustMechPartCostMultiplier": 0.8,
 

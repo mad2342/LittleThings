@@ -8,6 +8,7 @@ namespace LittleThings
         public bool UIFixes = true;
         public bool DisableTutorials = true;
         public bool InjuryFixes = false;
+        public bool FixInspire = true;
         public bool AdjustMechPartCost = true;
         public double AdjustMechPartCostMultiplier = 0.8;
 
