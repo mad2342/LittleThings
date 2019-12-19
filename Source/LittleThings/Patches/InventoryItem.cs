@@ -21,7 +21,7 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[SG_Shop_ItemSelectedPanel_Initialize_POSTFIX]  Expanding bonusText fields");
+                    Logger.LogLine("[SG_Shop_ItemSelectedPanel_Initialize_POSTFIX] Expanding bonusText fields");
 
                     ___SelectedItemWidget.gearBonusText.enableAutoSizing = false;
                     ___SelectedItemWidget.gearBonusText.enableWordWrapping = false;

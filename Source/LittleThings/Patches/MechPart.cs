@@ -1,17 +1,12 @@
 ﻿using System;
 using BattleTech;
-using BattleTech.Data;
-using BattleTech.UI;
 using Harmony;
-using HBS;
-using HBS.Collections;
 
 namespace LittleThings.Patches
 {
     class MechPart
     {
         // Adjust SimGameMechPartCost depending on difficulty setting
-
         [HarmonyPatch(typeof(Shop), "GetItemDescription")]
         public static class Shop_GetItemDescription_Patch
         {
@@ -24,17 +19,26 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    LittleThings.DebugLevel = 1;
+                    // Info only
+                    if (item.Type == ShopItemType.Mech)
+                    {
+                        Logger.LogLine("[Shop_GetItemDescription_POSTFIX] item.Type: " + item.Type.ToString());
+                        Logger.LogLine("[Shop_GetItemDescription_POSTFIX] item.ID: " + item.ID);
+                        // BEN: Beware! Description.Cost gets calculated in MechDef.RefreshBattleValue called by MechDef.CopyFron and possibly some MechDef constructors...
+                        Logger.LogLine("[Shop_GetItemDescription_POSTFIX] ___Sim.DataManager.MechDefs.Get(item.ID).Description.Id: " + ___Sim.DataManager.MechDefs.Get(item.ID).Description.Id);
+                        Logger.LogLine("[Shop_GetItemDescription_POSTFIX] ___Sim.DataManager.MechDefs.Get(item.ID).Description.Name: " + ___Sim.DataManager.MechDefs.Get(item.ID).Description.Name);
+                        Logger.LogLine("[Shop_GetItemDescription_POSTFIX] ___Sim.DataManager.MechDefs.Get(item.ID).Description.Cost: " + ___Sim.DataManager.MechDefs.Get(item.ID).Description.Cost);
+                        Logger.LogLine("[Shop_GetItemDescription_POSTFIX] __result.Cost: " + __result.Cost);
 
+                        return;
+                    }
 
 
                     if (item.Type != ShopItemType.MechPart)
                     {
-                        //Logger.LogLine("[Shop_GetItemDescription_POSTFIX] item.Type: " + item.Type.ToString());
                         return;
                     }
                     Logger.LogLine("[Shop_GetItemDescription_POSTFIX] __result.Cost BEFORE: " + __result.Cost);
-
 
                     MechDef mechDef = ___Sim.DataManager.MechDefs.Get(item.ID);
                     Logger.LogLine("[Shop_GetItemDescription_POSTFIX] mechDef.SimGameMechPartCost: " + mechDef.SimGameMechPartCost);
@@ -56,10 +60,6 @@ namespace LittleThings.Patches
 
                     Logger.LogLine("[Shop_GetItemDescription_POSTFIX] __result.Cost AFTER: " + __result.Cost);
                     Logger.LogLine("---");
-
-
-
-                    LittleThings.DebugLevel = 2;
                 }
                 catch (Exception e)
                 {

@@ -14,8 +14,11 @@
         "DisableTutorials": true,
         "InjuryFixes": false,
         "FixInspire": true,
+
+        "EnableStockMechReferenceViaMechDefDescriptionModel": true,
+
         "AdjustMechPartCost": true,
-        "AdjustMechPartCostMultiplier": 0.8,
+        "AdjustMechPartCostMultiplier": 0.7,
 
         "ReserveEnable": false,
         "ReserveBasePercentage": 12.5,

@@ -57,6 +57,7 @@
     <Compile Include="Patches\MechPart.cs" />
     <Compile Include="Patches\Morale.cs" />
     <Compile Include="Patches\Reserve.cs" />
+    <Compile Include="Patches\StockMech.cs" />
     <Compile Include="Patches\Tooltips.cs" />
     <Compile Include="Patches\TutorialPopups.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
