@@ -21,7 +21,7 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[SG_Shop_ItemSelectedPanel_Initialize_POSTFIX] Expanding bonusText fields");
+                    //Logger.LogLine("[SG_Shop_ItemSelectedPanel_Initialize_POSTFIX] Expanding bonusText fields");
 
                     ___SelectedItemWidget.gearBonusText.enableAutoSizing = false;
                     ___SelectedItemWidget.gearBonusText.enableWordWrapping = false;
@@ -60,7 +60,7 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[InventoryItemElement_SetData_POSTFIX] Expanding bonusText fields");
+                    //Logger.LogLine("[InventoryItemElement_SetData_POSTFIX] Expanding bonusText fields");
 
                     __instance.gearBonusText.enableAutoSizing = false;
                     __instance.gearBonusText.enableWordWrapping = false;
@@ -99,7 +99,7 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[InventoryItemElement_NotListView_SetData_POSTFIX] Expanding bonusText fields");
+                    //Logger.LogLine("[InventoryItemElement_NotListView_SetData_POSTFIX] Expanding bonusText fields");
 
                     __instance.gearBonusText.enableAutoSizing = false;
                     __instance.gearBonusText.enableWordWrapping = false;
