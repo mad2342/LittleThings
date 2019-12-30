@@ -21,7 +21,7 @@
         "AdjustMechPartCostMultiplier": 0.7,
 
         "ReserveEnable": false,
-        "ReserveBasePercentage": 12.5,
+        "ReserveBasePercentage": 25,
 
         "DFAsRemoveEntrenched": true
     }
