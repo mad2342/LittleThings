@@ -19,19 +19,23 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[SimGameState_CurResolvePerTurn_POSTFIX] SimGameState.CurResolvePerTurn BEFORE: " + __result);
                     MoraleConstantsDef moraleConstants = __instance.CombatConstants.MoraleConstants;
+                    int resolvePerTurn = 0;
                     for (int i = moraleConstants.BaselineAddFromSimGameThresholds.Length - 1; i >= 0; i--)
                     {
                         // Comparison was > but must be >=
                         if (__instance.Morale >= moraleConstants.BaselineAddFromSimGameThresholds[i])
                         {
-                            __result = moraleConstants.BaselineAddFromSimGameValues[i];
+                            resolvePerTurn = moraleConstants.BaselineAddFromSimGameValues[i];
                             break;
                         }
                     }
-
-                    Logger.LogLine("[SimGameState_CurResolvePerTurn_POSTFIX] SimGameState.CurResolvePerTurn AFTER: " + __result);
+                    if (resolvePerTurn != __result)
+                    {
+                        Logger.LogLine("[SimGameState_CurResolvePerTurn_POSTFIX] SimGameState.CurResolvePerTurn BEFORE: " + __result);
+                        __result = resolvePerTurn;
+                        Logger.LogLine("[SimGameState_CurResolvePerTurn_POSTFIX] SimGameState.CurResolvePerTurn AFTER: " + __result);
+                    }  
                 }
                 catch (Exception e)
                 {
