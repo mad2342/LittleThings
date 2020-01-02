@@ -9,6 +9,39 @@ namespace LittleThings.Patches
 {
     class ChassisHeatsinks
     {
+        [HarmonyPatch(typeof(Mech), "GetHeatSinkDissipation")]
+        public static class Mech_GetHeatSinkDissipation_Patch
+        {
+            public static bool Prepare()
+            {
+                return LittleThings.Settings.EnableChassisHeatsinks;
+            }
+
+            public static void Postfix(Mech __instance, ref float __result)
+            {
+                try
+                {
+                    if (!__instance.MechDef.Chassis.ChassisTags.Contains("chassis_heatsinks"))
+                    {
+                        return;
+                    }
+
+                    Logger.LogLine("[Mech_GetHeatSinkDissipation_POSTFIX] (" + __instance.MechDef.Description.Id + ") mechDef.Chassis.Heatsinks: " + __instance.MechDef.Chassis.Heatsinks);
+
+                    int additionalHeatSinks = __instance.MechDef.Chassis.Heatsinks;
+                    float heatSinkDissipation = __instance.Combat.Constants.Heat.DefaultHeatSinkDissipationCapacity;
+                    float additionalHeatSinkDissipation = additionalHeatSinks * heatSinkDissipation;
+                    Logger.LogLine("[Mech_GetHeatSinkDissipation_POSTFIX] (" + __instance.MechDef.Description.Id + ") additionalHeatSinkDissipation: " + additionalHeatSinkDissipation);
+
+                    __result += additionalHeatSinkDissipation;
+                }
+                catch (Exception e)
+                {
+                    Logger.LogError(e);
+                }
+            }
+        }
+
         [HarmonyPatch(typeof(StatTooltipData), "SetHeatData")]
         public static class StatTooltipData_SetHeatData_Patch
         {
@@ -51,39 +84,6 @@ namespace LittleThings.Patches
                         num.ToString()
                     }));
 
-                }
-                catch (Exception e)
-                {
-                    Logger.LogError(e);
-                }
-            }
-        }
-
-        [HarmonyPatch(typeof(Mech), "GetHeatSinkDissipation")]
-        public static class Mech_GetHeatSinkDissipation_Patch
-        {
-            public static bool Prepare()
-            {
-                return LittleThings.Settings.EnableChassisHeatsinks;
-            }
-
-            public static void Postfix(Mech __instance, ref float __result)
-            {
-                try
-                {
-                    if (!__instance.MechDef.Chassis.ChassisTags.Contains("chassis_heatsinks"))
-                    {
-                        return;
-                    }
-
-                    Logger.LogLine("[Mech_GetHeatSinkDissipation_POSTFIX] (" + __instance.MechDef.Description.Id + ") mechDef.Chassis.Heatsinks: " + __instance.MechDef.Chassis.Heatsinks);
-
-                    int additionalHeatSinks = __instance.MechDef.Chassis.Heatsinks;
-                    float heatSinkDissipation = __instance.Combat.Constants.Heat.DefaultHeatSinkDissipationCapacity;
-                    float additionalHeatSinkDissipation = additionalHeatSinks * heatSinkDissipation;
-                    Logger.LogLine("[Mech_GetHeatSinkDissipation_POSTFIX] (" + __instance.MechDef.Description.Id + ") additionalHeatSinkDissipation: " + additionalHeatSinkDissipation);
-
-                    __result += additionalHeatSinkDissipation;
                 }
                 catch (Exception e)
                 {
