@@ -16,6 +16,7 @@
         "FixInspire": true,
 
         "EnableStockMechReferenceViaMechDefDescriptionModel": true,
+        "EnableChassisHeatsinks": true,
 
         "AdjustMechPartCost": true,
         "AdjustMechPartCostMultiplier": 0.7,

@@ -9,6 +9,7 @@
         public bool FixInspire = true;
 
         public bool EnableStockMechReferenceViaMechDefDescriptionModel = true;
+        public bool EnableChassisHeatsinks = true;
 
         public bool AdjustMechPartCost = true;
         public double AdjustMechPartCostMultiplier = 0.7;

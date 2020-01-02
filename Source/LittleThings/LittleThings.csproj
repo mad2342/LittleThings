@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="LittleThings.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="Patches\ChassisHeatsinks.cs" />
     <Compile Include="Patches\DFA.cs" />
     <Compile Include="Patches\Injuries.cs" />
     <Compile Include="Patches\Inspire.cs" />
