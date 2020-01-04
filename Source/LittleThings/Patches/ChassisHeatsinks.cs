@@ -108,7 +108,7 @@ namespace LittleThings.Patches
                     {
                         return true;
                     }
-                    //Logger.LogLine("[MechStatisticsRules_CalculateHeatEfficiencyStat_PREFIX] (" + mechDef.Description.Id + ") mechDef.Chassis.Heatsinks: " + mechDef.Chassis.Heatsinks);
+                    Logger.LogLine("[MechStatisticsRules_CalculateHeatEfficiencyStat_PREFIX] (" + mechDef.Description.Id + ") mechDef.Chassis.Heatsinks: " + mechDef.Chassis.Heatsinks);
 
 
 

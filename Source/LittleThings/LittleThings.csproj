@@ -68,7 +68,7 @@
   <ItemGroup>
     <None Include="mod.json" />
     <None Include="README.md" />
-    <None Include="StreamingAssets\data\abilities\**\*.json" />
+    <None Include="StreamingAssets\data\**\*.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
@@ -77,7 +77,7 @@ xcopy $(TargetPath) $(SolutionDir)..\Release\$(TargetName)\ /Y
 xcopy $(ProjectDir)mod.json $(SolutionDir)..\Release\$(TargetName)\ /Y
 xcopy $(ProjectDir)README.md $(SolutionDir)..\Release\$(TargetName)\ /Y
 xcopy $(ProjectDir)README.md $(SolutionDir)..\ /Y
-xcopy $(ProjectDir)StreamingAssets\data\abilities\Traits\* $(SolutionDir)..\Release\$(TargetName)\StreamingAssets\data\abilities\Traits\ /Y /S
+xcopy $(ProjectDir)StreamingAssets\data\* $(SolutionDir)..\Release\$(TargetName)\StreamingAssets\data\ /Y /S
     </PostBuildEvent>
   </PropertyGroup>
 </Project>

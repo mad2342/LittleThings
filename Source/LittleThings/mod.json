@@ -14,6 +14,7 @@
         "DisableTutorials": true,
         "InjuryFixes": false,
         "FixInspire": true,
+        "FixIconOverlayAAR": true,
 
         "EnableStockMechReferenceViaMechDefDescriptionModel": true,
         "EnableChassisHeatsinks": true,

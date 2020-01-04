@@ -7,6 +7,7 @@
         public bool DisableTutorials = true;
         public bool InjuryFixes = false;
         public bool FixInspire = true;
+        public bool FixIconOverlayAAR = true;
 
         public bool EnableStockMechReferenceViaMechDefDescriptionModel = true;
         public bool EnableChassisHeatsinks = true;

@@ -1,0 +1,42 @@
+{
+    "Results" : [
+        {
+            "Scope" : "Company",
+            "Requirements" : null,
+            "AddedTags" : {},
+            "RemovedTags" : {},
+            "Stats" : [
+                {
+                    "typeString" : "System.Int32",
+                    "name" : "NextStoryMilestone",
+                    "value" : 1,
+                    "valueConstant" : ""
+                }
+            ],
+            "Actions" : [			
+                {
+                    "Type" : "System_PauseNotification",
+                    "value" : "We're deep in Directorate space, Commander. There won't be any work for us out here, so we'll need to plot a course back to the Restoration. Come to Navigation when you're ready.",
+					"additionalValues" : [
+						"Directorate Space",
+						"castDef_SumireDefault"
+					],
+                    "valueConstant" : null
+                },
+				{
+                    "Type" : "System_AddContract",
+                    "value" : "SimpleBattle_Patrol",
+                    "valueConstant" : null,
+					"additionalValues" : [
+						"AuriganDirectorate",
+						"AuriganRestoration",
+						"starsystemdef_Smithon"
+					]
+                }
+            ],
+            "ForceEvents" : null,
+            "TemporaryResult" : false,
+            "ResultDuration" : 0
+        }
+    ]
+}
