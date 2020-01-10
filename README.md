@@ -9,6 +9,7 @@
     - Now the values are read from "BaselineAddFromSimGameValues" in CombatGameConstants.json
 - Pilots health is now correctly displayed in Barracks and Hiring Halls (obsolete with BTG 1.8.1)
 - Dead or incapacitated actors won't get inspired anymore
+- Disabled "StockIcon" overlay in After Action Report 
 
 ## Changes/Additions
 - Enable Reserving for AI
@@ -18,6 +19,10 @@
 - Disable all additional tutorial slides in "Three years later" and the ones for Urban Warfare (Raven introduction)
 - The cost for MechParts in Shops is now calculated depending on corresponding difficulty setting
     - Adjustable discount for MechParts to make them still worthwhile
+- Respect "Heatsinks" in ChassisDefs
+    - Requires Tag "chassis_heatsinks" on ChassisDef
+
+
 
 ## Thanks
 * Mpstark

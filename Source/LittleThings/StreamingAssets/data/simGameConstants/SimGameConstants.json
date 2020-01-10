@@ -1,0 +1,40 @@
+{
+    "Progression" : {
+        "GunnerySkills" :[
+            [
+                "TraitDefWeaponHit1"
+            ],
+            [
+                "TraitDefWeaponHit2"
+            ],
+            [
+                "TraitDefWeaponHit3"
+            ],
+            [
+                "TraitDefWeaponHit4"
+            ],
+            [
+                "TraitDefWeaponHit5",
+                "AbilityDefG5"
+            ],
+            [
+                "TraitDefWeaponHit6"
+            ],
+            [
+                "TraitDefWeaponHit7",
+				"TraitDefHeadshotsImprove"
+            ],
+            [
+                "TraitDefWeaponHit8",
+                "AbilityDefG8"
+            ],
+            [
+                "TraitDefWeaponHit9"
+            ],
+            [
+                "TraitDefWeaponHit10",
+				"TraitDefHeadshotsMaster"
+            ]
+        ]
+    }
+}

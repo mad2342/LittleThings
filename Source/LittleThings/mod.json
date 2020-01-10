@@ -5,6 +5,10 @@
     "Version": "1.8.1-001R",
     "Description": "Fix some little annoyances and change minor things.",
     "Author": "Mad",
+	
+	"Manifest": [
+        { "Type": "AbilityDef", "Path": "AbilityDefs\\" }
+    ],
 
     "DLL": "LittleThings.dll",
 
@@ -15,6 +19,11 @@
         "InjuryFixes": false,
         "FixInspire": true,
         "FixIconOverlayAAR": true,
+
+        "ShowEnemyInjuries": true,
+        "ShowAbilityTooltips": true,
+        "ContractsTakeTime": false,
+        "SingleWeaponHeadshots": true,
 
         "EnableStockMechReferenceViaMechDefDescriptionModel": true,
         "EnableChassisHeatsinks": true,
