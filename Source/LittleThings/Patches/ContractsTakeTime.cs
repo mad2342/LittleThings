@@ -20,7 +20,7 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[SimGameState_ResolveCompleteContract_PREFIX] Calling OnDayPassed(0) now...");
+                    Logger.Debug("[SimGameState_ResolveCompleteContract_PREFIX] Calling OnDayPassed(0) now...");
 
                     // Get and call private method on SimGameState __instance
                     MethodInfo ___onDayPassed = __instance.GetType().GetMethod("OnDayPassed", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -28,7 +28,7 @@ namespace LittleThings.Patches
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }

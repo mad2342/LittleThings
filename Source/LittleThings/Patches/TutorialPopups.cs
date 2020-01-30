@@ -35,7 +35,7 @@ namespace LittleThings.Patches
                         triggerDialog.DialogID == __instance.Combat.Constants.Story2TutorialSlides4ID 
                         )
                     {
-                        Logger.LogLine("[CombatHUD_OnTriggerDialog_PREFIX] Supress tutorial: "+ triggerDialog.DialogID);
+                        Logger.Debug("[CombatHUD_OnTriggerDialog_PREFIX] Supress tutorial: "+ triggerDialog.DialogID);
                         return false;
                     }
 
@@ -43,7 +43,7 @@ namespace LittleThings.Patches
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                     return true;
                 }
             }

@@ -23,13 +23,13 @@ namespace LittleThings.Patches
                     /*
                     if (item.Type == ShopItemType.Mech)
                     {
-                        Logger.LogLine("[Shop_GetItemDescription_POSTFIX] item.Type: " + item.Type.ToString());
-                        Logger.LogLine("[Shop_GetItemDescription_POSTFIX] item.ID: " + item.ID);
+                        Logger.Debug("[Shop_GetItemDescription_POSTFIX] item.Type: " + item.Type.ToString());
+                        Logger.Debug("[Shop_GetItemDescription_POSTFIX] item.ID: " + item.ID);
                         // BEN: Beware! Description.Cost gets calculated in MechDef.RefreshBattleValue called by MechDef.CopyFrom and possibly some MechDef constructors...
-                        Logger.LogLine("[Shop_GetItemDescription_POSTFIX] ___Sim.DataManager.MechDefs.Get(item.ID).Description.Id: " + ___Sim.DataManager.MechDefs.Get(item.ID).Description.Id);
-                        Logger.LogLine("[Shop_GetItemDescription_POSTFIX] ___Sim.DataManager.MechDefs.Get(item.ID).Description.Name: " + ___Sim.DataManager.MechDefs.Get(item.ID).Description.Name);
-                        Logger.LogLine("[Shop_GetItemDescription_POSTFIX] ___Sim.DataManager.MechDefs.Get(item.ID).Description.Cost: " + ___Sim.DataManager.MechDefs.Get(item.ID).Description.Cost);
-                        Logger.LogLine("[Shop_GetItemDescription_POSTFIX] __result.Cost: " + __result.Cost);
+                        Logger.Debug("[Shop_GetItemDescription_POSTFIX] ___Sim.DataManager.MechDefs.Get(item.ID).Description.Id: " + ___Sim.DataManager.MechDefs.Get(item.ID).Description.Id);
+                        Logger.Debug("[Shop_GetItemDescription_POSTFIX] ___Sim.DataManager.MechDefs.Get(item.ID).Description.Name: " + ___Sim.DataManager.MechDefs.Get(item.ID).Description.Name);
+                        Logger.Debug("[Shop_GetItemDescription_POSTFIX] ___Sim.DataManager.MechDefs.Get(item.ID).Description.Cost: " + ___Sim.DataManager.MechDefs.Get(item.ID).Description.Cost);
+                        Logger.Debug("[Shop_GetItemDescription_POSTFIX] __result.Cost: " + __result.Cost);
 
                         return;
                     }
@@ -40,7 +40,7 @@ namespace LittleThings.Patches
                         return;
                     }
 
-                    //Logger.LogLine("[Shop_GetItemDescription_POSTFIX] __result.Cost BEFORE: " + __result.Cost);
+                    //Logger.Debug("[Shop_GetItemDescription_POSTFIX] __result.Cost BEFORE: " + __result.Cost);
 
                     MechDef mechDef = ___Sim.DataManager.MechDefs.Get(item.ID);
                     DescriptionDef description = mechDef.Description;
@@ -50,19 +50,19 @@ namespace LittleThings.Patches
                     __result = new DescriptionDef(description.Id, string.Format("{0} Mech Part", description.Name), description.Details, description.Icon, AdjustedMechPartCost, description.Rarity, description.Purchasable, description.Manufacturer, description.Model, description.UIName);
 
                     /*
-                    Logger.LogLine("[Shop_GetItemDescription_POSTFIX] description.Name: " + description.Name);
-                    Logger.LogLine("[Shop_GetItemDescription_POSTFIX] mechDef.SimGameMechPartCost: " + mechDef.SimGameMechPartCost);
-                    Logger.LogLine("[Shop_GetItemDescription_POSTFIX] mechDef.Chassis.Description.Cost: " + mechDef.Chassis.Description.Cost);
-                    Logger.LogLine("[Shop_GetItemDescription_POSTFIX] ___Sim.Constants.Story.DefaultMechPartMax: " + ___Sim.Constants.Story.DefaultMechPartMax);
-                    Logger.LogLine("[Shop_GetItemDescription_POSTFIX] Recalculate MechPartCost (Chassis.Cost / PartsToAssemble) * Settings.AdjustMechPartCostMultiplier: (" + mechDef.Chassis.Description.Cost + " / " + defaultMechPartMax + ") * " + LittleThings.Settings.AdjustMechPartCostMultiplier);
-                    Logger.LogLine("[Shop_GetItemDescription_POSTFIX] AdjustedMechPartCost: " + AdjustedMechPartCost);
-                    Logger.LogLine("[Shop_GetItemDescription_POSTFIX] __result.Cost AFTER: " + __result.Cost);
-                    Logger.LogLine("---");
+                    Logger.Debug("[Shop_GetItemDescription_POSTFIX] description.Name: " + description.Name);
+                    Logger.Debug("[Shop_GetItemDescription_POSTFIX] mechDef.SimGameMechPartCost: " + mechDef.SimGameMechPartCost);
+                    Logger.Debug("[Shop_GetItemDescription_POSTFIX] mechDef.Chassis.Description.Cost: " + mechDef.Chassis.Description.Cost);
+                    Logger.Debug("[Shop_GetItemDescription_POSTFIX] ___Sim.Constants.Story.DefaultMechPartMax: " + ___Sim.Constants.Story.DefaultMechPartMax);
+                    Logger.Debug("[Shop_GetItemDescription_POSTFIX] Recalculate MechPartCost (Chassis.Cost / PartsToAssemble) * Settings.AdjustMechPartCostMultiplier: (" + mechDef.Chassis.Description.Cost + " / " + defaultMechPartMax + ") * " + LittleThings.Settings.AdjustMechPartCostMultiplier);
+                    Logger.Debug("[Shop_GetItemDescription_POSTFIX] AdjustedMechPartCost: " + AdjustedMechPartCost);
+                    Logger.Debug("[Shop_GetItemDescription_POSTFIX] __result.Cost AFTER: " + __result.Cost);
+                    Logger.Debug("---");
                     */
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }
@@ -78,24 +78,24 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[MechDef_SimGameMechPartCost_POSTFIX] __result BEFORE: " + __result);
+                    Logger.Debug("[MechDef_SimGameMechPartCost_POSTFIX] __result BEFORE: " + __result);
 
                     SimGameState simGameState = LazySingletonBehavior<UnityGameInstance>.Instance.Game.Simulation;
                     int defaultMechPartMax = simGameState.Constants.Story.DefaultMechPartMax;
-                    Logger.LogLine("[MechDef_SimGameMechPartCost_POSTFIX] simGameState.Constants.Story.DefaultMechPartMax: " + simGameState.Constants.Story.DefaultMechPartMax);
-                    Logger.LogLine("[MechDef_SimGameMechPartCost_POSTFIX] __instance.SimGameMechPartCost: " + __instance.SimGameMechPartCost);
-                    Logger.LogLine("[MechDef_SimGameMechPartCost_POSTFIX] __instance.Chassis.Description.Cost: " + __instance.Chassis.Description.Cost);
+                    Logger.Debug("[MechDef_SimGameMechPartCost_POSTFIX] simGameState.Constants.Story.DefaultMechPartMax: " + simGameState.Constants.Story.DefaultMechPartMax);
+                    Logger.Debug("[MechDef_SimGameMechPartCost_POSTFIX] __instance.SimGameMechPartCost: " + __instance.SimGameMechPartCost);
+                    Logger.Debug("[MechDef_SimGameMechPartCost_POSTFIX] __instance.Chassis.Description.Cost: " + __instance.Chassis.Description.Cost);
 
                     int AdjustedMechPartCost = (int)Math.Floor(__instance.Chassis.Description.Cost / defaultMechPartMax * 0.9);
-                    Logger.LogLine("[MechDef_SimGameMechPartCost_POSTFIX] AdjustedMechPartCost: " + AdjustedMechPartCost);
+                    Logger.Debug("[MechDef_SimGameMechPartCost_POSTFIX] AdjustedMechPartCost: " + AdjustedMechPartCost);
 
-                    Logger.LogLine("[MechDef_SimGameMechPartCost_POSTFIX] __result AFTER: " + __result);
+                    Logger.Debug("[MechDef_SimGameMechPartCost_POSTFIX] __result AFTER: " + __result);
 
                     __result = AdjustedMechPartCost;
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }

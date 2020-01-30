@@ -23,11 +23,17 @@ namespace LittleThings.Patches
                         return;
                     }
 
+                    // Player can check health in HUD
+                    if (__instance.Team.LocalPlayerControlsTeam)
+                    {
+                        return;
+                    }
+
+                    // Will only display once BonusHealth (Cockpit Mods anyone?) is reduced to 0
                     __instance.ParentActor?.Combat.MessageCenter.PublishMessage(
                         new AddSequenceToStackMessage(
                             new ShowActorInfoSequence(
                                 __instance.ParentActor,
-                                //$"HEALTH: {__instance.TotalHealth - __instance.Injuries}/{__instance.TotalHealth}",
                                 $"INJURIES: {__instance.Injuries}",
                                 FloatieMessage.MessageNature.PilotInjury,
                                 true
@@ -37,7 +43,7 @@ namespace LittleThings.Patches
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }

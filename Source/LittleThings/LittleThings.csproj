@@ -49,10 +49,13 @@
     <Reference Include="UnityEngine.UI" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\Link\MadLogger.cs">
+      <Link>MadLogger.cs</Link>
+    </Compile>
     <Compile Include="LittleThings.cs" />
-    <Compile Include="Logger.cs" />
     <Compile Include="Patches\AbilityTooltips.cs" />
     <Compile Include="Patches\ChassisHeatsinks.cs" />
+    <Compile Include="Patches\Coil.cs" />
     <Compile Include="Patches\ContractsTakeTime.cs" />
     <Compile Include="Patches\DFA.cs" />
     <Compile Include="Patches\EnemyInjuries.cs" />
@@ -62,8 +65,8 @@
     <Compile Include="Patches\InventoryItem.cs" />
     <Compile Include="Patches\MechPart.cs" />
     <Compile Include="Patches\Morale.cs" />
+    <Compile Include="Patches\PortraitRightClick.cs" />
     <Compile Include="Patches\Reserve.cs" />
-    <Compile Include="Patches\SingleWeaponHeadshots.cs" />
     <Compile Include="Patches\StockMech.cs" />
     <Compile Include="Patches\Tooltips.cs" />
     <Compile Include="Patches\TutorialPopups.cs" />

@@ -19,18 +19,20 @@ namespace LittleThings.Patches
             {
                 try
                 {
+                    // @ToDo: Use this?
+                    //__instance.CanBeInspired;
                     bool ActorCanBeInspired = !__instance.IsDead && !__instance.IsFlaggedForDeath && !__instance.pilot.IsIncapacitated;
 
                     if (ActorCanBeInspired)
                     {
-                        Logger.LogLine("[Mech_InspireActor_PREFIX] Pilot (" + __instance.pilot.Callsign + ") can be inspired. Calling original method...");
+                        Logger.Debug("[Mech_InspireActor_PREFIX] Pilot (" + __instance.pilot.Callsign + ") can be inspired. Calling original method...");
                         
                         // Call original method
                         return true;
                     }
                     else
                     {
-                        Logger.LogLine("[Mech_InspireActor_PREFIX] Pilot (" + __instance.pilot.Callsign + ") is either dead or incapacitated. Skipping original method...");
+                        Logger.Debug("[Mech_InspireActor_PREFIX] Pilot (" + __instance.pilot.Callsign + ") is either dead or incapacitated. Skipping original method...");
 
                         // Skip original method
                         return false;
@@ -38,7 +40,7 @@ namespace LittleThings.Patches
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                     return true;
                 }
             }

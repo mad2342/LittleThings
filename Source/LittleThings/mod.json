@@ -19,11 +19,12 @@
         "InjuryFixes": false,
         "FixInspire": true,
         "FixIconOverlayAAR": true,
+        "FixCombatHUDPortraitRightClick": true,
+        "FixCoilPreviews": true,
 
         "ShowEnemyInjuries": true,
         "ShowAbilityTooltips": true,
         "ContractsTakeTime": false,
-        "SingleWeaponHeadshots": true,
 
         "EnableStockMechReferenceViaMechDefDescriptionModel": true,
         "EnableChassisHeatsinks": true,

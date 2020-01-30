@@ -12,7 +12,7 @@ namespace LittleThings.Patches
         // This method duplicates functionality of MechLabStockInfoPopup.StockMechDefLoaded
         static void OverrideStockMechDefLoaded(this MechLabStockInfoPopup __instance, string id, MechDef def)
         {
-            Logger.LogLine("[MechLabStockInfoPopup.OverrideStockMechDefLoaded] called.");
+            Logger.Debug("[MechLabStockInfoPopup.OverrideStockMechDefLoaded] called.");
 
             MechDef ___stockMechDef = Traverse.Create(__instance).Field("stockMechDef").GetValue<MechDef>();
             MechBayMechInfoWidget ___mechInfoWidget = Traverse.Create(__instance).Field("mechInfoWidget").GetValue<MechBayMechInfoWidget>();
@@ -39,14 +39,14 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[MechLabStockInfoPopup_LoadStockMech_PREFIX] ___baseMechDef.Description.Id: " + ___baseMechDef.Description.Id);
+                    Logger.Debug("[MechLabStockInfoPopup_LoadStockMech_PREFIX] ___baseMechDef.Description.Id: " + ___baseMechDef.Description.Id);
 
                     if (!string.IsNullOrEmpty(___baseMechDef.Description.Model))
                     {
-                        Logger.LogLine("[MechLabStockInfoPopup_LoadStockMech_PREFIX] ___baseMechDef.Description.Model: " + ___baseMechDef.Description.Model);
+                        Logger.Debug("[MechLabStockInfoPopup_LoadStockMech_PREFIX] ___baseMechDef.Description.Model: " + ___baseMechDef.Description.Model);
 
                         ___stockMechDefId = ___baseMechDef.Description.Model.Replace("model", "mechdef");
-                        Logger.LogLine("[MechLabStockInfoPopup_LoadStockMech_PREFIX] ___stockMechDefId: " + ___stockMechDefId);
+                        Logger.Debug("[MechLabStockInfoPopup_LoadStockMech_PREFIX] ___stockMechDefId: " + ___stockMechDefId);
 
 
 
@@ -64,7 +64,7 @@ namespace LittleThings.Patches
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                     return true;
                 }
             }

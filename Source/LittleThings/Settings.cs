@@ -8,11 +8,12 @@
         public bool InjuryFixes = false;
         public bool FixInspire = true;
         public bool FixIconOverlayAAR = true;
+        public bool FixCombatHUDPortraitRightClick = true;
+        public bool FixCoilPreviews = true;
 
         public bool ShowEnemyInjuries = true;
         public bool ShowAbilityTooltips = true;
         public bool ContractsTakeTime = false;
-        public bool SingleWeaponHeadshots = true;
 
         public bool EnableStockMechReferenceViaMechDefDescriptionModel = true;
         public bool EnableChassisHeatsinks = true;

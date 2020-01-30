@@ -18,20 +18,20 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[Pilot_InitAbilities_PREFIX] ModifyStats (" + __instance.Callsign + "): " + ModifyStats);
-                    Logger.LogLine("[Pilot_InitAbilities_PREFIX] __instance.Guts: " + __instance.Guts);
-                    Logger.LogLine("[Pilot_InitAbilities_PREFIX] __instance.Health: " + __instance.Health);
+                    Logger.Debug("[Pilot_InitAbilities_PREFIX] ModifyStats (" + __instance.Callsign + "): " + ModifyStats);
+                    Logger.Debug("[Pilot_InitAbilities_PREFIX] __instance.Guts: " + __instance.Guts);
+                    Logger.Debug("[Pilot_InitAbilities_PREFIX] __instance.Health: " + __instance.Health);
 
                     // Check if health is correctly set
                     if (__instance.Guts >= 4 && __instance.Health < 4)
                     {
                         ModifyStats = true;
-                        Logger.LogLine("[Pilot_InitAbilities_PREFIX] Encountered BUG! Forced parameter ModifyStats (" + ModifyStats + ") so that Pilot.ApplyPassiveAbilities() is now called for sure.");
+                        Logger.Debug("[Pilot_InitAbilities_PREFIX] Encountered BUG! Forced parameter ModifyStats (" + ModifyStats + ") so that Pilot.ApplyPassiveAbilities() is now called for sure.");
                     }
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }
@@ -47,7 +47,7 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[Pilot_ApplyPassiveAbilities_POSTFIX] Reverted if-clause to 1.5.X version to circumvent BUG regarding health display.");
+                    Logger.Debug("[Pilot_ApplyPassiveAbilities_POSTFIX] Reverted if-clause to 1.5.X version to circumvent BUG regarding health display.");
 
                     for (int i = 0; i < __instance.PassiveAbilities.Count; i++)
                     {
@@ -73,7 +73,7 @@ namespace LittleThings.Patches
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }

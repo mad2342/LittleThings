@@ -20,18 +20,18 @@ namespace LittleThings.Patches
                 {
                     if (name == BehaviorVariableName.Bool_ReserveEnabled)
                     {
-                        Logger.LogLine("[BehaviorTree_GetBehaviorVariableValue_POSTFIX] Overriding BehaviorVariableName.Bool_ReserveEnabled: true");
+                        Logger.Debug("[BehaviorTree_GetBehaviorVariableValue_POSTFIX] Overriding BehaviorVariableName.Bool_ReserveEnabled: true");
                         __result.BoolVal = true;
                     }
                     else if (name == BehaviorVariableName.Float_ReserveBasePercentage)
                     {
-                        Logger.LogLine("[BehaviorTree_GetBehaviorVariableValue_POSTFIX] Overriding BehaviorVariableName.Float_ReserveBasePercentage: " + LittleThings.Settings.ReserveBasePercentage);
+                        Logger.Debug("[BehaviorTree_GetBehaviorVariableValue_POSTFIX] Overriding BehaviorVariableName.Float_ReserveBasePercentage: " + LittleThings.Settings.ReserveBasePercentage);
                         __result.FloatVal = LittleThings.Settings.ReserveBasePercentage;
                     }
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }

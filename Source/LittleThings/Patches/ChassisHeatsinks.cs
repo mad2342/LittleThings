@@ -26,18 +26,18 @@ namespace LittleThings.Patches
                         return;
                     }
 
-                    Logger.LogLine("[Mech_GetHeatSinkDissipation_POSTFIX] (" + __instance.MechDef.Description.Id + ") mechDef.Chassis.Heatsinks: " + __instance.MechDef.Chassis.Heatsinks);
+                    Logger.Debug("[Mech_GetHeatSinkDissipation_POSTFIX] (" + __instance.MechDef.Description.Id + ") mechDef.Chassis.Heatsinks: " + __instance.MechDef.Chassis.Heatsinks);
 
                     int additionalHeatSinks = __instance.MechDef.Chassis.Heatsinks;
                     float heatSinkDissipation = __instance.Combat.Constants.Heat.DefaultHeatSinkDissipationCapacity;
                     float additionalHeatSinkDissipation = additionalHeatSinks * heatSinkDissipation;
-                    Logger.LogLine("[Mech_GetHeatSinkDissipation_POSTFIX] (" + __instance.MechDef.Description.Id + ") additionalHeatSinkDissipation: " + additionalHeatSinkDissipation);
+                    Logger.Debug("[Mech_GetHeatSinkDissipation_POSTFIX] (" + __instance.MechDef.Description.Id + ") additionalHeatSinkDissipation: " + additionalHeatSinkDissipation);
 
                     __result += additionalHeatSinkDissipation;
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }
@@ -59,11 +59,11 @@ namespace LittleThings.Patches
                         return;
                     }
 
-                    Logger.LogLine("[StatTooltipData_SetHeatData_POSTFIX] (" + def.Description.Id + ") def.Chassis.Heatsinks: " + def.Chassis.Heatsinks);
+                    Logger.Debug("[StatTooltipData_SetHeatData_POSTFIX] (" + def.Description.Id + ") def.Chassis.Heatsinks: " + def.Chassis.Heatsinks);
 
                     CombatGameConstants cgc = CombatGameConstants.GetInstance(UnityGameInstance.BattleTechGame);
                     float num = ((float)def.Chassis.Heatsinks + (float)cgc.Heat.InternalHeatSinkCount) * cgc.Heat.DefaultHeatSinkDissipationCapacity;
-                    Logger.LogLine("[StatTooltipData_SetHeatData_POSTFIX] (" + def.Description.Id + ") ChassisDissipationCapacity: " + num);
+                    Logger.Debug("[StatTooltipData_SetHeatData_POSTFIX] (" + def.Description.Id + ") ChassisDissipationCapacity: " + num);
 
                     for (int i = 0; i < def.Inventory.Length; i++)
                     {
@@ -76,7 +76,7 @@ namespace LittleThings.Patches
                             }
                         }
                     }
-                    Logger.LogLine("[StatTooltipData_SetHeatData_POSTFIX] (" + def.Description.Id + ") TotalDissipationCapacity: " + num);
+                    Logger.Debug("[StatTooltipData_SetHeatData_POSTFIX] (" + def.Description.Id + ") TotalDissipationCapacity: " + num);
 
                     __instance.dataList.Remove("Heat Sinking");
                     __instance.dataList.Add(Strings.T("Heat Sinking"), Strings.T("{0} Heat", new object[]
@@ -87,7 +87,7 @@ namespace LittleThings.Patches
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }
@@ -108,7 +108,7 @@ namespace LittleThings.Patches
                     {
                         return true;
                     }
-                    Logger.LogLine("[MechStatisticsRules_CalculateHeatEfficiencyStat_PREFIX] (" + mechDef.Description.Id + ") mechDef.Chassis.Heatsinks: " + mechDef.Chassis.Heatsinks);
+                    Logger.Debug("[MechStatisticsRules_CalculateHeatEfficiencyStat_PREFIX] (" + mechDef.Description.Id + ") mechDef.Chassis.Heatsinks: " + mechDef.Chassis.Heatsinks);
 
 
 
@@ -216,7 +216,7 @@ namespace LittleThings.Patches
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                     return true;
                 }
             }

@@ -18,12 +18,12 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[AAR_UnitStatusWidget_FillInData_POSTFIX] Disabling IconOverlay.");
+                    Logger.Debug("[AAR_UnitStatusWidget_FillInData_POSTFIX] Disabling IconOverlay.");
                     ___MechStatusIconWidget.ShowStockIcon(false);
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }

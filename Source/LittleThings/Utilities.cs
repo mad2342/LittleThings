@@ -19,7 +19,7 @@ namespace LittleThings
                 {
                     if (log)
                     {
-                        Logger.LogLine($"[Utilities_GetReadiedWeaponCount] {w.Name} is enabled and will fire at target({target.DisplayName})!");
+                        Logger.Debug($"[Utilities_GetReadiedWeaponCount] {w.Name} is enabled and will fire at target({target.DisplayName})!");
                     }
                     readiedWeaponCount++;
                 }
@@ -27,7 +27,7 @@ namespace LittleThings
                 {
                     if (log)
                     {
-                        Logger.LogLine($"[Utilities_GetReadiedWeaponCount] {w.Name} is not ready!");
+                        Logger.Debug($"[Utilities_GetReadiedWeaponCount] {w.Name} is not ready!");
                     }
                 }
             }
@@ -109,7 +109,7 @@ namespace LittleThings
 
             if (log)
             {
-                Logger.LogLine($"[Utilities_GetMaxAllowedWeaponCountForHeadshots] {p.Callsign} has gunnery: {gunnery}");
+                Logger.Debug($"[Utilities_GetMaxAllowedWeaponCountForHeadshots] {p.Callsign} has gunnery: {gunnery}");
             }
 
             if (gunnery >= 7)

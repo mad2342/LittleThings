@@ -21,7 +21,7 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.LogLine("[TooltipPrefab_Equipment_SetData_POSTFIX] Comma-separating bonusesText");
+                    Logger.Debug("[TooltipPrefab_Equipment_SetData_POSTFIX] Comma-separating bonusesText");
 
                     MechComponentDef mechComponentDef = (MechComponentDef)data;
                     if (string.IsNullOrEmpty(mechComponentDef.BonusValueA) && string.IsNullOrEmpty(mechComponentDef.BonusValueB))
@@ -50,7 +50,7 @@ namespace LittleThings.Patches
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }

@@ -32,14 +32,14 @@ namespace LittleThings.Patches
                     }
                     if (resolvePerTurn != __result)
                     {
-                        Logger.LogLine("[SimGameState_CurResolvePerTurn_POSTFIX] SimGameState.CurResolvePerTurn BEFORE: " + __result);
+                        Logger.Debug("[SimGameState_CurResolvePerTurn_POSTFIX] SimGameState.CurResolvePerTurn BEFORE: " + __result);
                         __result = resolvePerTurn;
-                        Logger.LogLine("[SimGameState_CurResolvePerTurn_POSTFIX] SimGameState.CurResolvePerTurn AFTER: " + __result);
+                        Logger.Debug("[SimGameState_CurResolvePerTurn_POSTFIX] SimGameState.CurResolvePerTurn AFTER: " + __result);
                     }  
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }
@@ -71,15 +71,15 @@ namespace LittleThings.Patches
                         }
                         if (resolvePerTurn != __result)
                         {
-                            Logger.LogLine("[Team_CollectSimGameBaseline_POSTFIX] Team.CollectSimGameBaseline BEFORE: " + __result);
+                            Logger.Debug("[Team_CollectSimGameBaseline_POSTFIX] Team.CollectSimGameBaseline BEFORE: " + __result);
                             __result = resolvePerTurn;
-                            Logger.LogLine("[Team_CollectSimGameBaseline_POSTFIX] Team.CollectSimGameBaseline AFTER: " + __result);
+                            Logger.Debug("[Team_CollectSimGameBaseline_POSTFIX] Team.CollectSimGameBaseline AFTER: " + __result);
                         }
                     } 
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }
@@ -109,8 +109,8 @@ namespace LittleThings.Patches
 
                     string levelDescriptionName = "Morale: " + simGameState.GetDescriptorForMoraleLevel(moraleLevel);
                     string levelDescriptionDetails = "At this level of morale, you will gain " + __instance.resolvePerTurn + " Resolve points per round of battle.";
-                    //Logger.LogLine("[MoraleTooltipData_Constructor_POSTFIX] levelDescriptionName: " + levelDescriptionName);
-                    //Logger.LogLine("[MoraleTooltipData_Constructor_POSTFIX] levelDescriptionDetails: " + levelDescriptionDetails);
+                    //Logger.Debug("[MoraleTooltipData_Constructor_POSTFIX] levelDescriptionName: " + levelDescriptionName);
+                    //Logger.Debug("[MoraleTooltipData_Constructor_POSTFIX] levelDescriptionDetails: " + levelDescriptionDetails);
                     BaseDescriptionDef customLevelDescription = new BaseDescriptionDef("TooltipMoraleCustom", levelDescriptionName, levelDescriptionDetails, "");
 
                     // Set
@@ -119,7 +119,7 @@ namespace LittleThings.Patches
                 }
                 catch (Exception e)
                 {
-                    Logger.LogError(e);
+                    Logger.Error(e);
                 }
             }
         }
