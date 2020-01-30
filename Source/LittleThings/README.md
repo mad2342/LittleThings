@@ -12,6 +12,8 @@
 - Disabled "StockIcon" overlay in After Action Report 
 - Right-Click on MWTray Portraits always works
 - Fixes some annoyances with Coil damage preview
+- Sanitize some trait descriptions
+- Workaround an empty contract list after priority mission on Artru
 
 ## Changes/Additions
 - Enable Reserving for AI
