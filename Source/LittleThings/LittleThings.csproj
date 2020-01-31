@@ -78,9 +78,14 @@
   <ItemGroup>
     <None Include="mod.json" />
     <None Include="README.md" />
-    <None Include="StreamingAssets\data\**\*.json" />
-    <None Include="AbilityDefs\TraitDefHeadshotsImprove.json" />
-    <None Include="AbilityDefs\TraitDefHeadshotsMaster.json" />
+    <None Include="StreamingAssets\data\abilities\Traits\TraitDefCalledShotMaster.json" />
+    <None Include="StreamingAssets\data\abilities\Traits\TraitDefHealthAddOne.json" />
+    <None Include="StreamingAssets\data\abilities\Traits\TraitDefHealthAddThree.json" />
+    <None Include="StreamingAssets\data\abilities\Traits\TraitDefHealthAddTwo.json" />
+    <None Include="StreamingAssets\data\abilities\Traits\TraitDefOverheatAddFifteen.json" />
+    <None Include="StreamingAssets\data\abilities\Traits\TraitDefOverheatAddThirty.json" />
+    <None Include="StreamingAssets\data\milestones\milestone_424_notify_directorateSpace.json" />
+    <None Include="StreamingAssets\data\starsystem\starsystemdef_Artru_Contested.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

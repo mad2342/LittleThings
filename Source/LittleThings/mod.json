@@ -5,10 +5,6 @@
     "Version": "1.8.1-002R",
     "Description": "Fix some little annoyances and change minor things.",
     "Author": "Mad",
-	
-	"Manifest": [
-        { "Type": "AbilityDef", "Path": "AbilityDefs\\" }
-    ],
 
     "DLL": "LittleThings.dll",
 
