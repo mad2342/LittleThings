@@ -25,7 +25,12 @@
     - Adjustable discount for MechParts to make them still worthwhile
 - Respect "Heatsinks" in ChassisDefs
     - Requires Tag "chassis_heatsinks" on ChassisDef
+- Open up the possibility of using "MechDef.Description.Model" to reference the base mech (aka stock)
+    - Useful for custom MechDefs with broken/changed inventory/locations to properly show the stock loadout in MechLab
 - Shows number of injuries for targets when injured (!health, because you can't know it)
+
+## Note
+- All fixes and features can be turned on/off via settings
 
 
 
