@@ -10,6 +10,10 @@
 - Pilots health is now correctly displayed in Barracks and Hiring Halls (obsolete with BTG 1.8.1)
 - Dead or incapacitated actors won't get inspired anymore
 - Disabled "StockIcon" overlay in After Action Report 
+- Right-Click on MWTray Portraits always works
+- Fixes some annoyances with Coil damage preview
+- Sanitize some trait descriptions
+- Workaround an empty contract list after priority mission on Artru
 
 ## Changes/Additions
 - Enable Reserving for AI
@@ -21,6 +25,7 @@
     - Adjustable discount for MechParts to make them still worthwhile
 - Respect "Heatsinks" in ChassisDefs
     - Requires Tag "chassis_heatsinks" on ChassisDef
+- Shows number of injuries for targets when injured (!health, because you can't know it)
 
 
 

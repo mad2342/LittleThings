@@ -95,7 +95,6 @@ xcopy $(ProjectDir)mod.json $(SolutionDir)..\Release\$(TargetName)\ /Y
 xcopy $(ProjectDir)README.md $(SolutionDir)..\Release\$(TargetName)\ /Y
 xcopy $(ProjectDir)README.md $(SolutionDir)..\ /Y
 xcopy $(ProjectDir)StreamingAssets\data\* $(SolutionDir)..\Release\$(TargetName)\StreamingAssets\data\ /Y /S
-xcopy $(ProjectDir)AbilityDefs\* $(SolutionDir)..\Release\$(TargetName)\AbilityDefs\ /Y /S
     </PostBuildEvent>
   </PropertyGroup>
 </Project>
