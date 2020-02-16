@@ -12,6 +12,7 @@
         "MoraleFixes": true,
         "UIFixes": true,
         "DisableTutorials": true,
+        "DisableSimGameCharHighlights": true,
         "InjuryFixes": false,
         "FixInspire": true,
         "FixIconOverlayAAR": true,

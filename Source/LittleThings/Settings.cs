@@ -5,6 +5,7 @@
         public bool MoraleFixes = true;
         public bool UIFixes = true;
         public bool DisableTutorials = true;
+        public bool DisableSimGameCharHighlights = true;
         public bool InjuryFixes = false;
         public bool FixInspire = true;
         public bool FixIconOverlayAAR = true;

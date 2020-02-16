@@ -14,6 +14,8 @@
 - Fixes some annoyances with Coil damage preview
 - Sanitize some trait descriptions
 - Workaround an empty contract list after priority mission on Artru
+- Fix position of Heraldry Screen Title
+- Disable highlights of some interactables in Argo's rooms.
 
 ## Changes/Additions
 - Enable Reserving for AI
