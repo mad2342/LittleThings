@@ -12,6 +12,10 @@
         public bool FixCombatHUDPortraitRightClick = true;
         public bool FixCoilPreviews = true;
 
+        public bool FixGalaxyDeleteSaves = true;
+        public string GalaxySaveGameRelativeRootPath = "AppData\\Local\\GOG.com\\Galaxy\\Applications\\50593543263669699\\Storage\\Shared\\Files\\";
+        public string GalaxySaveGameAbsolutePathOverride = null;
+
         public bool ShowEnemyInjuries = true;
         public bool ShowAbilityTooltips = true;
         public bool ContractsTakeTime = false;

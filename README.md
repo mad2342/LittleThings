@@ -16,6 +16,9 @@
 - Workaround an empty contract list after priority mission on Artru
 - Fix position of Heraldry Screen Title
 - Disable highlights of some interactables in Argo's rooms.
+- Works around the annoying "Undeletable Saves" Bug for GOG Galaxy users.
+    - Builds path from users homedir + "GalaxySaveGameRelativeRootPath" and deletes files there if requested to do so.
+    - Option to override with a full, absolute path to savegamedir added
 
 ## Changes/Additions
 - Enable Reserving for AI

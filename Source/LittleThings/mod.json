@@ -19,6 +19,10 @@
         "FixCombatHUDPortraitRightClick": true,
         "FixCoilPreviews": true,
 
+        "FixGalaxyDeleteSaves": true,
+        "GalaxySaveGameRelativeRootPath": "AppData\\Local\\GOG.com\\Galaxy\\Applications\\50593543263669699\\Storage\\Shared\\Files\\",
+        "GalaxySaveGameAbsolutePathOverride": "",
+
         "ShowEnemyInjuries": true,
         "ShowAbilityTooltips": true,
         "ContractsTakeTime": false,
@@ -29,7 +33,7 @@
         "AdjustMechPartCost": true,
         "AdjustMechPartCostMultiplier": 0.7,
 
-        "ReserveEnable": false,
+        "ReserveEnable": true,
         "ReserveBasePercentage": 25,
 
         "DFAsRemoveEntrenched": true
