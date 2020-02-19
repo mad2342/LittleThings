@@ -12,7 +12,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.FixGalaxyDeleteSaves;
+                return Type.GetType("BattleTech.Save.Core.GOGFileOperations") != null && LittleThings.Settings.FixGalaxyDeleteSaves;
             }
 
             public static void Prefix(GOGFileOperations __instance, string path)
