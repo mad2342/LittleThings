@@ -65,8 +65,8 @@ namespace LittleThings.Patches
                     {
                         float displayedDamage = float.Parse(__instance.DamageText.text, CultureInfo.InvariantCulture.NumberFormat);
                         float weaponDefDamage = __instance.DisplayedWeapon.weaponDef.Damage;
-                        Logger.Info($"[CombatHUDWeaponSlot_ShowTextColor_POSTFIX] displayedDamage: {displayedDamage}");
-                        Logger.Info($"[CombatHUDWeaponSlot_ShowTextColor_POSTFIX] weaponDefDamage: {weaponDefDamage}");
+                        //Logger.Info($"[CombatHUDWeaponSlot_ShowTextColor_POSTFIX] displayedDamage: {displayedDamage}");
+                        //Logger.Info($"[CombatHUDWeaponSlot_ShowTextColor_POSTFIX] weaponDefDamage: {weaponDefDamage}");
 
                         if (displayedDamage > weaponDefDamage)
                         {
