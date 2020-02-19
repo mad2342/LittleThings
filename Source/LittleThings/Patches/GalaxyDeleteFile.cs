@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using BattleTech.Save.Core;
 using Harmony;
 
@@ -12,7 +13,12 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return Type.GetType("BattleTech.Save.Core.GOGFileOperations") != null && LittleThings.Settings.FixGalaxyDeleteSaves;
+                Type GOGFileOperations = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
+                            from type in assembly.GetTypes()
+                            where type.FullName == "BattleTech.Save.Core.GOGFileOperations"
+                            select type).FirstOrDefault();
+
+                return GOGFileOperations != null && LittleThings.Settings.FixGalaxyDeleteSaves;
             }
 
             public static void Prefix(GOGFileOperations __instance, string path)
