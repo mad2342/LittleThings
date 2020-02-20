@@ -14,7 +14,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.UIFixes;
+                return LittleThings.Settings.FixUIEquipmentTooltips;
             }
 
             public static void Postfix(TooltipPrefab_Equipment __instance, object data, LocalizableText ___bonusesText)

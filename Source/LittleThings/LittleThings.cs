@@ -3,6 +3,7 @@ using System.Reflection;
 using System;
 using Newtonsoft.Json;
 using System.IO;
+using LittleThings.Patches;
 
 namespace LittleThings
 {
@@ -34,6 +35,9 @@ namespace LittleThings
             // Harmony calls need to go last here because their Prepare() methods directly check Settings...
             HarmonyInstance harmony = HarmonyInstance.Create("de.mad.LittleThings");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
+
+            // GOGFileOperations cannot be patched by annotation as it wouldn't find the Type for Non-Galaxy Users...
+            GalaxyDeleteFile.GOGFileOperations_DeleteFile_Prepare();
         }
     }
 }

@@ -3,7 +3,9 @@
     internal class Settings
     {
         public bool MoraleFixes = true;
-        public bool UIFixes = true;
+        public bool FixUIInventoryItems = true;
+        public bool FixUIHeraldryScreen = true;
+        public bool FixUIEquipmentTooltips = true;
         public bool DisableTutorials = true;
         public bool DisableSimGameCharHighlights = true;
         public bool InjuryFixes = false;

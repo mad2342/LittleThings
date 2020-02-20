@@ -14,7 +14,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.UIFixes;
+                return LittleThings.Settings.FixUIHeraldryScreen;
             }
 
             public static void Prefix(HeraldryCreatorPanel __instance, LocalizableText ___screenTitle, LocalizableText ___mechInfoName)

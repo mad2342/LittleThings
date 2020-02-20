@@ -14,7 +14,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.UIFixes;
+                return LittleThings.Settings.FixUIInventoryItems;
             }
 
             public static void Postfix(SG_Shop_ItemSelectedPanel __instance, InventoryItemElement ___SelectedItemWidget)
@@ -53,7 +53,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.UIFixes;
+                return LittleThings.Settings.FixUIInventoryItems;
             }
 
             public static void Postfix(InventoryItemElement __instance)
@@ -92,7 +92,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.UIFixes;
+                return LittleThings.Settings.FixUIInventoryItems;
             }
 
             public static void Postfix(InventoryItemElement_NotListView __instance)

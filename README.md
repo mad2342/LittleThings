@@ -41,5 +41,7 @@
 
 ## Thanks
 * Mpstark
+* KMiSSioN
+* Redferne
 * pardeike
 * HBS
