@@ -48,5 +48,21 @@ namespace LittleThings.Patches
                 }
             }
         }
+
+        // Suppress tutorial slide for Starmap
+        [HarmonyPatch(typeof(SimGameState), "CheckForNewStarmapTechNotification")]
+        public static class SimGameState_CheckForNewStarmapTechNotification_Patch
+        {
+            public static bool Prepare()
+            {
+                return LittleThings.Settings.DisableTutorials;
+            }
+
+            public static bool Prefix(SimGameState __instance)
+            {
+                Logger.Debug("[SimGameState_CheckForNewStarmapTechNotification_PREFIX] Supress NewStarmapTechNotification");
+                return false;
+            }
+        }
     }
 }
