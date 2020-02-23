@@ -6,7 +6,8 @@ namespace LittleThings.Patches
 {
     class Morale
     {
-        // Fix wrong getters for Resolve/Turn
+        // Fix wrong getters for Resolve/Turn (obsolete with BTG 1.9.0)
+        /*
         [HarmonyPatch(typeof(SimGameState), "CurResolvePerTurn", MethodType.Getter)]
         public static class SimGameState_CurResolvePerTurn_Patch
         {
@@ -24,6 +25,7 @@ namespace LittleThings.Patches
                     for (int i = moraleConstants.BaselineAddFromSimGameThresholds.Length - 1; i >= 0; i--)
                     {
                         // Comparison was > but must be >=
+                        // @ToDo: Check if this is really fixed with BTG 1.9.X
                         if (__instance.Morale >= moraleConstants.BaselineAddFromSimGameThresholds[i])
                         {
                             resolvePerTurn = moraleConstants.BaselineAddFromSimGameValues[i];
@@ -44,7 +46,7 @@ namespace LittleThings.Patches
             }
         }
 
-        // Fix another wrong calculation for Resolve/Turn
+        // Fix another wrong calculation for Resolve/Turn (obsolete with BTG 1.9.0)
         [HarmonyPatch(typeof(Team), "CollectSimGameBaseline")]
         public static class Team_CollectSimGameBaseline_Patch
         {
@@ -83,6 +85,7 @@ namespace LittleThings.Patches
                 }
             }
         }
+        */
 
         // Fix hardcoded(!) tooltip descriptions
         [HarmonyPatch(typeof(MoraleTooltipData), MethodType.Constructor)]

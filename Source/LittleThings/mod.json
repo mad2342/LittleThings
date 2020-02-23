@@ -17,11 +17,11 @@
         "DisableSimGameCharHighlights": true,
         "InjuryFixes": false,
         "FixInspire": true,
-        "FixIconOverlayAAR": true,
+        "FixIconOverlayAAR": false,
         "FixCombatHUDPortraitRightClick": true,
         "FixCoilPreviews": true,
 
-        "FixGalaxyDeleteSaves": true,
+        "FixGalaxyDeleteSaves": false,
         "GalaxySaveGameRelativeRootPath": "AppData\\Local\\GOG.com\\Galaxy\\Applications\\50593543263669699\\Storage\\Shared\\Files\\",
         "GalaxySaveGameAbsolutePathOverride": "",
 
@@ -30,7 +30,7 @@
         "ContractsTakeTime": false,
 
         "EnableStockMechReferenceViaMechDefDescriptionModel": true,
-        "EnableChassisHeatsinks": true,
+        "EnableChassisHeatsinks": false,
 
         "AdjustMechPartCost": true,
         "AdjustMechPartCostMultiplier": 0.7,

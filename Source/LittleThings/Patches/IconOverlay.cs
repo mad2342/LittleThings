@@ -6,6 +6,7 @@ namespace LittleThings.Patches
 {
     class IconOverlay
     {
+        // Obsolete with BTG 1.9.0
         [HarmonyPatch(typeof(AAR_UnitStatusWidget), "FillInData")]
         public static class AAR_UnitStatusWidget_FillInData_Patch
         {

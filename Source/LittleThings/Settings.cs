@@ -10,11 +10,11 @@
         public bool DisableSimGameCharHighlights = true;
         public bool InjuryFixes = false;
         public bool FixInspire = true;
-        public bool FixIconOverlayAAR = true;
+        public bool FixIconOverlayAAR = false;
         public bool FixCombatHUDPortraitRightClick = true;
         public bool FixCoilPreviews = true;
 
-        public bool FixGalaxyDeleteSaves = true;
+        public bool FixGalaxyDeleteSaves = false;
         public string GalaxySaveGameRelativeRootPath = "AppData\\Local\\GOG.com\\Galaxy\\Applications\\50593543263669699\\Storage\\Shared\\Files\\";
         public string GalaxySaveGameAbsolutePathOverride = null;
 
@@ -23,7 +23,7 @@
         public bool ContractsTakeTime = false;
 
         public bool EnableStockMechReferenceViaMechDefDescriptionModel = true;
-        public bool EnableChassisHeatsinks = true;
+        public bool EnableChassisHeatsinks = false;
 
         public bool AdjustMechPartCost = true;
         public double AdjustMechPartCostMultiplier = 0.7;

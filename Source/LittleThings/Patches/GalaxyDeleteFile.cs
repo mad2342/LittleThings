@@ -13,6 +13,12 @@ namespace LittleThings.Patches
         {
             try
             {
+                if (!LittleThings.Settings.FixGalaxyDeleteSaves)
+                {
+                    Logger.Debug($"[GOGFileOperations_DeleteFile_Prepare] Disabled by settings. Aborting...");
+                    return;
+                }
+
                 Type GOGFileOperations = (from assembly in AppDomain.CurrentDomain.GetAssemblies()
                                           from type in assembly.GetTypes()
                                           where type.FullName == "BattleTech.Save.Core.GOGFileOperations"
