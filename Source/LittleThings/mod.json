@@ -20,6 +20,7 @@
         "FixIconOverlayAAR": false,
         "FixCombatHUDPortraitRightClick": true,
         "FixCoilPreviews": true,
+        "FixRepairNotification": true,
 
         "FixGalaxyDeleteSaves": false,
         "GalaxySaveGameRelativeRootPath": "AppData\\Local\\GOG.com\\Galaxy\\Applications\\50593543263669699\\Storage\\Shared\\Files\\",

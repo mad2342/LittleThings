@@ -68,6 +68,7 @@
     <Compile Include="Patches\MechPart.cs" />
     <Compile Include="Patches\Morale.cs" />
     <Compile Include="Patches\PortraitRightClick.cs" />
+    <Compile Include="Patches\RepairNotification.cs" />
     <Compile Include="Patches\Reserve.cs" />
     <Compile Include="Patches\SimGameChar.cs" />
     <Compile Include="Patches\StockMech.cs" />
