@@ -26,6 +26,9 @@
         public bool EnableStockMechReferenceViaMechDefDescriptionModel = true;
         public bool EnableChassisHeatsinks = false;
 
+        public bool EnableTotalCameraControl = true;
+        public bool EnableSpawnProtection = true;
+
         public bool AdjustMechPartCost = true;
         public double AdjustMechPartCostMultiplier = 0.7;
 

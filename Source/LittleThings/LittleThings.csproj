@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="LittleThings.cs" />
     <Compile Include="Patches\AbilityTooltips.cs" />
+    <Compile Include="Patches\Camera.cs" />
     <Compile Include="Patches\ChassisHeatsinks.cs" />
     <Compile Include="Patches\Coil.cs" />
     <Compile Include="Patches\ContractsTakeTime.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Patches\RepairNotification.cs" />
     <Compile Include="Patches\Reserve.cs" />
     <Compile Include="Patches\SimGameChar.cs" />
+    <Compile Include="Patches\SpawnProtection.cs" />
     <Compile Include="Patches\StockMech.cs" />
     <Compile Include="Patches\Tooltips.cs" />
     <Compile Include="Patches\TutorialPopups.cs" />
