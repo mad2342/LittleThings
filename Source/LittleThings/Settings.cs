@@ -14,6 +14,7 @@
         public bool FixCombatHUDPortraitRightClick = true;
         public bool FixCoilPreviews = true;
         public bool FixRepairNotification = true;
+        public bool FixTaurianReputationPostCampaign = true;
 
         public bool FixGalaxyDeleteSaves = false;
         public string GalaxySaveGameRelativeRootPath = "AppData\\Local\\GOG.com\\Galaxy\\Applications\\50593543263669699\\Storage\\Shared\\Files\\";
@@ -26,8 +27,7 @@
         public bool EnableStockMechReferenceViaMechDefDescriptionModel = true;
         public bool EnableChassisHeatsinks = false;
 
-        public bool EnableTotalCameraControl = true;
-        public bool EnableSpawnProtection = true;
+        public bool EnableSpawnProtection = false;
 
         public bool AdjustMechPartCost = true;
         public double AdjustMechPartCostMultiplier = 0.7;

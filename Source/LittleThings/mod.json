@@ -21,6 +21,7 @@
         "FixCombatHUDPortraitRightClick": true,
         "FixCoilPreviews": true,
         "FixRepairNotification": true,
+        "FixTaurianReputationPostCampaign": true,
 
         "FixGalaxyDeleteSaves": false,
         "GalaxySaveGameRelativeRootPath": "AppData\\Local\\GOG.com\\Galaxy\\Applications\\50593543263669699\\Storage\\Shared\\Files\\",
@@ -33,8 +34,7 @@
         "EnableStockMechReferenceViaMechDefDescriptionModel": true,
         "EnableChassisHeatsinks": false,
 
-        "EnableTotalCameraControl": true,
-        "EnableSpawnProtection": true,
+        "EnableSpawnProtection": false,
 
         "AdjustMechPartCost": true,
         "AdjustMechPartCostMultiplier": 0.7,

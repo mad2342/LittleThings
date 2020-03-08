@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using BattleTech;
 using Harmony;
 
@@ -8,8 +9,8 @@ namespace LittleThings.Patches
     class SpawnProtection
     {
         // Combat start
-        [HarmonyPatch(typeof(TurnDirector), "BeginNewRound")]
-        public static class TurnDirector_BeginNewRound_Patch
+        [HarmonyPatch(typeof(TurnDirector), "StartFirstRound")]
+        public static class TurnDirector_StartFirstRound_Patch
         {
             public static bool Prepare()
             {
@@ -20,18 +21,15 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    if (__instance.CurrentRound == 1)
-                    {
-                        Logger.Debug($"[TurnDirector_BeginNewRound_POSTFIX] Protecting units on combat round one");
+                    Logger.Debug($"[TurnDirector_StartFirstRound_POSTFIX] Protecting units on combat round one");
 
-                        List<AbstractActor> actors = new List<AbstractActor>();
-                        foreach (AbstractActor actor in __instance.Combat.AllActors)
+                    List<AbstractActor> actors = new List<AbstractActor>();
+                    foreach (AbstractActor actor in __instance.Combat.AllActors)
+                    {
+                        if (actor is Mech mech)
                         {
-                            if (actor is Mech mech)
-                            {
-                                Logger.Debug($"[TurnDirector_BeginNewRound_POSTFIX] Applying braced state to mech: {mech.DisplayName}");
-                                mech.ApplyBraced();
-                            }
+                            Logger.Debug($"[TurnDirector_StartFirstRound_POSTFIX] Applying braced state to mech: {mech.DisplayName}");
+                            mech.ApplyBraced();
                         }
                     }
                 }
@@ -41,7 +39,7 @@ namespace LittleThings.Patches
                 }
             }
         }
-        
+
 
 
         // Reinforcements
