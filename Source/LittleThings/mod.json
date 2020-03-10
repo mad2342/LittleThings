@@ -22,6 +22,7 @@
         "FixCoilPreviews": true,
         "FixRepairNotification": true,
         "FixTaurianReputationPostCampaign": true,
+        "FixStatTooltipFirepower": true,
 
         "FixGalaxyDeleteSaves": false,
         "GalaxySaveGameRelativeRootPath": "AppData\\Local\\GOG.com\\Galaxy\\Applications\\50593543263669699\\Storage\\Shared\\Files\\",

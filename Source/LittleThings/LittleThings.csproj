@@ -72,6 +72,7 @@
     <Compile Include="Patches\Reserve.cs" />
     <Compile Include="Patches\SimGameChar.cs" />
     <Compile Include="Patches\SpawnProtection.cs" />
+    <Compile Include="Patches\StatTooltipFirepower.cs" />
     <Compile Include="Patches\StockMech.cs" />
     <Compile Include="Patches\TaurianReputation.cs" />
     <Compile Include="Patches\Tooltips.cs" />
