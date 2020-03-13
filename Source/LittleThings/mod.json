@@ -23,6 +23,7 @@
         "FixRepairNotification": true,
         "FixTaurianReputationPostCampaign": true,
         "FixStatTooltipFirepower": true,
+        "TrainingNotificationLimit": 4,
 
         "FixGalaxyDeleteSaves": false,
         "GalaxySaveGameRelativeRootPath": "AppData\\Local\\GOG.com\\Galaxy\\Applications\\50593543263669699\\Storage\\Shared\\Files\\",

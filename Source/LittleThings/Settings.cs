@@ -16,6 +16,7 @@
         public bool FixRepairNotification = true;
         public bool FixTaurianReputationPostCampaign = true;
         public bool FixStatTooltipFirepower = true;
+        public int TrainingNotificationLimit = 4;
 
         public bool FixGalaxyDeleteSaves = false;
         public string GalaxySaveGameRelativeRootPath = "AppData\\Local\\GOG.com\\Galaxy\\Applications\\50593543263669699\\Storage\\Shared\\Files\\";

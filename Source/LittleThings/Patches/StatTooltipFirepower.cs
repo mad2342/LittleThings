@@ -154,10 +154,12 @@ namespace LittleThings.Patches
                         ballisticDmgStr = $"{ballisticDmg} ({ballisticDmg + additionalBallisticDmg})";
                     }
 
+                    // Column 1
                     __instance.dataList.Add(Strings.T("Max Dmg"), allDmg.ToString());
                     __instance.dataList.Add(Strings.T("Energy"), energyDmgStr);
                     __instance.dataList.Add(Strings.T("Support"), supportDmg.ToString());
-
+                    
+                    // Column 2
                     __instance.dataList.Add(Strings.T("Max Stability Dmg"), stbDmg.ToString());
                     __instance.dataList.Add(Strings.T("Ballistic"), ballisticDmgStr);
                     __instance.dataList.Add(Strings.T("Missile"), missileDmg.ToString());

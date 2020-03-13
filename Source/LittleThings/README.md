@@ -39,6 +39,9 @@
 - Open up the possibility of using "MechDef.Description.Model" to reference the base mech (aka stock)
     - Useful for custom MechDefs with broken/changed inventory/locations to properly show the stock loadout in MechLab
 - Shows number of injuries for targets when injured (!health, because you can't know it)
+- Suppress Mechwarrior training notification if number of trainable pilots is below a certain limit
+    - Vanilla: 2
+    - LittleThings: Configurable in settings (default: 4)
 
 ## Note
 - All fixes and features can be turned on/off via settings
