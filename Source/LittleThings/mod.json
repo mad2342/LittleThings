@@ -13,6 +13,7 @@
         "FixUIInventoryItems": true,
         "FixUIHeraldryScreen": true,
         "FixUIEquipmentTooltips": true,
+        "FixUIMainNavigation": true,
         "DisableTutorials": true,
         "DisableSimGameCharHighlights": true,
         "InjuryFixes": false,
@@ -37,6 +38,8 @@
         "EnableChassisHeatsinks": false,
 
         "EnableSpawnProtection": false,
+
+        "EnableLanceConfigurationByTags": true,
 
         "AdjustMechPartCost": true,
         "AdjustMechPartCostMultiplier": 0.7,

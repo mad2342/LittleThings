@@ -56,7 +56,7 @@ namespace LittleThings.Patches
                                     // Energy weapons
                                     if (weaponDef.WeaponCategoryValue.IsEnergy)
                                     {
-                                        Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] {weaponDef.Description.Name} is an energy weapon");
+                                        //Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] {weaponDef.Description.Name} is an energy weapon");
 
                                         if (weaponDef.Type == WeaponType.COIL)
                                         {
@@ -73,36 +73,36 @@ namespace LittleThings.Patches
                                             energyDmg += ((weaponDef.ShotsWhenFired > 0) ? (weaponDef.Damage * (float)weaponDef.ShotsWhenFired) : weaponDef.Damage);
                                         }
 
-                                        Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] energyDmg: {energyDmg}");
+                                        Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] ({weaponDef.Description.Name}) energyDmg: {energyDmg}");
                                     }
                                     // Ballistic weapons
                                     else if (weaponDef.WeaponCategoryValue.IsBallistic)
                                     {
-                                        Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] {weaponDef.Description.Name} is a ballistic weapon");
+                                        //Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] {weaponDef.Description.Name} is a ballistic weapon");
 
                                         allDmg += ((weaponDef.ShotsWhenFired > 0) ? (weaponDef.Damage * (float)weaponDef.ShotsWhenFired) : weaponDef.Damage);
                                         stbDmg += ((weaponDef.ShotsWhenFired > 0) ? (weaponDef.Instability * (float)weaponDef.ShotsWhenFired) : weaponDef.Instability);
 
                                         ballisticDmg += ((weaponDef.ShotsWhenFired > 0) ? (weaponDef.Damage * (float)weaponDef.ShotsWhenFired) : weaponDef.Damage);
 
-                                        Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] ballisticDmg: {ballisticDmg}");
+                                        Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] ({weaponDef.Description.Name}) ballisticDmg: {ballisticDmg}");
                                     }
                                     // Missiles
                                     else if (weaponDef.WeaponCategoryValue.IsMissile)
                                     {
-                                        Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] {weaponDef.Description.Name} is a missile weapon");
+                                        //Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] {weaponDef.Description.Name} is a missile weapon");
 
                                         allDmg += ((weaponDef.ShotsWhenFired > 0) ? (weaponDef.Damage * (float)weaponDef.ShotsWhenFired) : weaponDef.Damage);
                                         stbDmg += ((weaponDef.ShotsWhenFired > 0) ? (weaponDef.Instability * (float)weaponDef.ShotsWhenFired) : weaponDef.Instability);
 
                                         missileDmg += ((weaponDef.ShotsWhenFired > 0) ? (weaponDef.Damage * (float)weaponDef.ShotsWhenFired) : weaponDef.Damage);
 
-                                        Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] missileDmg: {missileDmg}");
+                                        Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] ({weaponDef.Description.Name}) missileDmg: {missileDmg}");
                                     }
                                     // Support
                                     else if (weaponDef.WeaponCategoryValue.IsSupport)
                                     {
-                                        Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] {weaponDef.Description.Name} is a support weapon");
+                                        //Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] {weaponDef.Description.Name} is a support weapon");
 
                                         if (weaponDef.Type == WeaponType.COIL)
                                         {
@@ -119,7 +119,7 @@ namespace LittleThings.Patches
                                             supportDmg += ((weaponDef.ShotsWhenFired > 0) ? (weaponDef.Damage * (float)weaponDef.ShotsWhenFired) : weaponDef.Damage);
                                         }
 
-                                        Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] supportDmg: {supportDmg}");
+                                        Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] ({weaponDef.Description.Name}) supportDmg: {supportDmg}");
                                     }
                                     // Everything else
                                     else

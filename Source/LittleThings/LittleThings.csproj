@@ -65,6 +65,8 @@
     <Compile Include="Patches\Injuries.cs" />
     <Compile Include="Patches\Inspire.cs" />
     <Compile Include="Patches\InventoryItem.cs" />
+    <Compile Include="Patches\LanceConfigurationByTags.cs" />
+    <Compile Include="Patches\MainNavigation.cs" />
     <Compile Include="Patches\MechPart.cs" />
     <Compile Include="Patches\Morale.cs" />
     <Compile Include="Patches\PortraitRightClick.cs" />
@@ -94,6 +96,7 @@
     <None Include="StreamingAssets\data\abilities\Traits\TraitDefOverheatAddThirty.json" />
     <None Include="StreamingAssets\data\milestones\milestone_424_notify_directorateSpace.json" />
     <None Include="StreamingAssets\data\starsystem\starsystemdef_Artru_Contested.json" />
+    <None Include="StreamingAssets\data\contracts\**\*.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

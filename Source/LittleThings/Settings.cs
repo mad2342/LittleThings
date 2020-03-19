@@ -6,6 +6,7 @@
         public bool FixUIInventoryItems = true;
         public bool FixUIHeraldryScreen = true;
         public bool FixUIEquipmentTooltips = true;
+        public bool FixUIMainNavigation = true;
         public bool DisableTutorials = true;
         public bool DisableSimGameCharHighlights = true;
         public bool InjuryFixes = false;
@@ -30,6 +31,8 @@
         public bool EnableChassisHeatsinks = false;
 
         public bool EnableSpawnProtection = false;
+
+        public bool EnableLanceConfigurationByTags = true;
 
         public bool AdjustMechPartCost = true;
         public double AdjustMechPartCostMultiplier = 0.7;
