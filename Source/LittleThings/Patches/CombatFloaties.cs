@@ -14,16 +14,11 @@ namespace LittleThings.Patches
             return LittleThings.Settings.SmallCombatFloaties;
         }
 
-        public static void Prefix(CombatHUDFloatieAnchor __instance, Text text,  float fontSize, CombatGameState ___Combat)
+        public static void Prefix(CombatHUDFloatieAnchor __instance, ref float fontSize, CombatGameState ___Combat)
         {
             try
             {
-                if (fontSize > ___Combat.Constants.CombatUIConstants.floatieSizeSmall)
-                {
-                    Logger.Debug($"[CombatHUDFloatieAnchor_CreateFloatie_PREFIX] Decreasing floatie font size...");
-                    Logger.Info($"[CombatHUDFloatieAnchor_CreateFloatie_PREFIX] text: {text}");
-                    fontSize = ___Combat.Constants.CombatUIConstants.floatieSizeSmall;
-                }
+                fontSize = ___Combat.Constants.CombatUIConstants.floatieSizeSmall;
             }
             catch (Exception e)
             {
