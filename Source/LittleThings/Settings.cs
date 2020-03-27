@@ -24,6 +24,8 @@
         public string GalaxySaveGameAbsolutePathOverride = null;
 
         public bool ShowEnemyInjuries = true;
+        public bool SmallCombatFloaties = true;
+
         public bool ShowAbilityTooltips = true;
         public bool ContractsTakeTime = false;
 

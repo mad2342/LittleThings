@@ -31,6 +31,8 @@
         "GalaxySaveGameAbsolutePathOverride": "",
 
         "ShowEnemyInjuries": true,
+        "SmallCombatFloaties": true,
+
         "ShowAbilityTooltips": true,
         "ContractsTakeTime": false,
 
