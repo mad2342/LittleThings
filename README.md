@@ -23,6 +23,7 @@
     - Shows correct values for stability damage now
     - Respects special gear such as Optimized Capacitors and Ballistic Siege Compensators
     - Shows breakdown of damage depending on weapon type (Energy, Ballistic, Missile, Support)
+- Shrink the combat floaties for Structure/Armor-Damage
 
 ## Changes/Additions
 - Enable Reserving for AI
@@ -42,9 +43,13 @@
 - Suppress Mechwarrior training notification if number of trainable pilots is below a certain limit
     - Vanilla: 2
     - LittleThings: Configurable in settings (default: 4)
+- Randomize the 'Mechs fielded for missions "Training Day" and "B-Team"
+    - Especially helpful under circumstances where these missions spawn with a very high difficulty
+    - At least one Urbie is preserved of course
+    - On a side note: This is realized by opening up unit-selection by tags in contract.jsons (can be used for all contracts as a modders resource)
 
 ## Note
-- All fixes and features can be turned on/off via settings
+- Most fixes and features can be turned on/off via settings
 
 
 
