@@ -2,7 +2,29 @@
 
 [Battletech Mod][ModTek] Fix some little annoyances and change minor things.
 
-## Fixes
+## Highlights
+- Fix/Expand Stat Tooltip for Firepower
+    - Shows correct values for stability damage now
+    - Respects special gear such as Optimized Capacitors and Ballistic Siege Compensators
+    - Shows breakdown of damage depending on weapon type (Energy, Ballistic, Missile, Support)
+- Replace hardcoded(!) tooltip descriptions for morale levels
+    - Now the values are read from "BaselineAddFromSimGameValues" in CombatGameConstants.json
+- Dead or incapacitated actors won't get inspired anymore
+- Fixes some annoyances with Coil damage preview
+- DFA attacks remove entrenched state from enemy Mechs because it just makes sense
+- Disable all additional tutorial slides in "Three years later"
+    - And the one for Urban Warfare (Raven introduction)
+    - And the one for the added Starmap features
+- Suppress Mechwarrior training notification if number of trainable pilots is below a certain limit
+    - Vanilla: 2
+    - LittleThings: Configurable in settings (default: 4)
+- Randomize the 'Mechs fielded for missions "Training Day" and "B-Team"
+    - Especially helpful under circumstances where these missions spawn with a very high difficulty
+    - At least one Urbie is preserved of course
+- Shrink the combat floaties for Structure/Armor-Damage
+
+## Full list
+### Fixes
 - Bonuses display for Equipment had a missing comma added
 - Fixed wrong getters for Resolve/Turn (obsolete with BTG 1.9.0)
 - Replace hardcoded(!) tooltip descriptions for morale levels
@@ -23,9 +45,8 @@
     - Shows correct values for stability damage now
     - Respects special gear such as Optimized Capacitors and Ballistic Siege Compensators
     - Shows breakdown of damage depending on weapon type (Energy, Ballistic, Missile, Support)
-- Shrink the combat floaties for Structure/Armor-Damage
 
-## Changes/Additions
+### Changes/Additions
 - Enable Reserving for AI
     - Adjustable base chance
     - NO behaviour variables tweaked (You may want "BetterAI")
@@ -47,6 +68,7 @@
     - Especially helpful under circumstances where these missions spawn with a very high difficulty
     - At least one Urbie is preserved of course
     - On a side note: This is realized by opening up unit-selection by tags in contract.jsons (can be used for all contracts as a modders resource)
+- Shrink the combat floaties for Structure/Armor-Damage
 
 ## Note
 - Most fixes and features can be turned on/off via settings
