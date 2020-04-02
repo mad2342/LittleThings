@@ -24,6 +24,7 @@
         "FixRepairNotification": true,
         "FixTaurianReputationPostCampaign": true,
         "FixStatTooltipFirepower": true,
+        "ExpandStatTooltipDurability": true,
         "TrainingNotificationLimit": 4,
 
         "FixGalaxyDeleteSaves": false,

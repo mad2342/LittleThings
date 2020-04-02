@@ -17,6 +17,7 @@
         public bool FixRepairNotification = true;
         public bool FixTaurianReputationPostCampaign = true;
         public bool FixStatTooltipFirepower = true;
+        public bool ExpandStatTooltipDurability = true;
         public int TrainingNotificationLimit = 4;
 
         public bool FixGalaxyDeleteSaves = false;
