@@ -3,6 +3,7 @@
 [Battletech Mod][ModTek] Fix some little annoyances and change minor things.
 
 ## Highlights
+- Fix "Exit/Re-Enter Combat" bug for escort missions (Interleaved Dropouts)
 - Fix/Expand Stat Tooltip for Firepower
     - Shows correct values for stability damage now
     - Respects special gear such as Optimized Capacitors and Ballistic Siege Compensators
@@ -45,6 +46,7 @@
     - Shows correct values for stability damage now
     - Respects special gear such as Optimized Capacitors and Ballistic Siege Compensators
     - Shows breakdown of damage depending on weapon type (Energy, Ballistic, Missile, Support)
+- Fix "Exit/Re-Enter Combat" bug for escort missions (Interleaved Dropouts)
 
 ### Changes/Additions
 - Enable Reserving for AI

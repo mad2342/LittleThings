@@ -2,7 +2,7 @@
     "Name": "LittleThings",
     "Enabled": true,
 
-    "Version": "1.9.1-002R",
+    "Version": "1.9.1-003R",
     "Description": "Fix some little annoyances and change minor things.",
     "Author": "Mad",
 
@@ -26,6 +26,7 @@
         "FixStatTooltipFirepower": true,
         "ExpandStatTooltipDurability": true,
         "TrainingNotificationLimit": 4,
+        "FixInterleavedDropouts": true,
 
         "FixGalaxyDeleteSaves": false,
         "GalaxySaveGameRelativeRootPath": "AppData\\Local\\GOG.com\\Galaxy\\Applications\\50593543263669699\\Storage\\Shared\\Files\\",
