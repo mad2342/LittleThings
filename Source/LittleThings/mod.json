@@ -46,7 +46,7 @@
         "EnableLanceConfigurationByTags": true,
 
         "AdjustMechPartCost": true,
-        "AdjustMechPartCostMultiplier": 0.7,
+        "AdjustMechPartCostMultiplier": 0.8,
 
         "ReserveEnable": false,
         "ReserveBasePercentage": 25,

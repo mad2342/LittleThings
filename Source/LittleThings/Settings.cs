@@ -39,9 +39,9 @@
         public bool EnableLanceConfigurationByTags = true;
 
         public bool AdjustMechPartCost = true;
-        public double AdjustMechPartCostMultiplier = 0.7;
+        public double AdjustMechPartCostMultiplier = 0.8;
 
-        public bool ReserveEnable = true;
+        public bool ReserveEnable = false;
         public float ReserveBasePercentage = 25f;
 
         public bool DFAsRemoveEntrenched = true;
