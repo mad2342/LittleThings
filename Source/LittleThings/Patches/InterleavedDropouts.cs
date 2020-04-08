@@ -46,15 +46,21 @@ namespace LittleThings.Patches
                 allActors.RemoveAll((AbstractActor x) => x.IsDead || x.IsFlaggedForDeath);
                 for (int i = 0; i < allActors.Count; i++)
                 {
-                    //Logger.Info($"[TurnDirector_DoAnyUnitsHaveContactWithEnemy_POSTFIX] ({allActors[i].DisplayName}) HasAnyContactWithEnemy: {allActors[i].HasAnyContactWithEnemy}");
-                    //Logger.Info($"[TurnDirector_DoAnyUnitsHaveContactWithEnemy_POSTFIX] ({allActors[i].DisplayName}) DetectedEnemyUnits: {allActors[i].GetDetectedEnemyUnits().Count}");
+                    // Checking all *living* detected enemies to compare with with current result. For unknown reasons this won't match when convoys are extracted
+                    List<AbstractActor> detectedEnemyUnits = allActors[i].GetDetectedEnemyUnits();
+                    detectedEnemyUnits.RemoveAll((AbstractActor a) => a.IsDead || a.IsFlaggedForDeath);
 
+                    //Logger.Info($"[TurnDirector_DoAnyUnitsHaveContactWithEnemy_POSTFIX] ({allActors[i].DisplayName}) HasAnyContactWithEnemy: {allActors[i].HasAnyContactWithEnemy}");
+                    //Logger.Info($"[TurnDirector_DoAnyUnitsHaveContactWithEnemy_POSTFIX] ({allActors[i].DisplayName}) DetectedEnemyUnits: {detectedEnemyUnits.Count}");
+
+                    // This is a copy of what is checked in original method
                     if (allActors[i].HasAnyContactWithEnemy)
                     {
                         HasAnyContactWithEnemy = true;
                     }
 
-                    if (allActors[i].GetDetectedEnemyUnits().Count > 0)
+                    // Custom check to verify result
+                    if (detectedEnemyUnits.Count > 0)
                     {
                         HasAnyActorDetectedAnyEnemy = true;
                     }
