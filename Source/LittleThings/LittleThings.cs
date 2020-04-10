@@ -37,7 +37,7 @@ namespace LittleThings
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
             // GOGFileOperations cannot be patched by annotation as it wouldn't find the Type for Non-Galaxy Users...
-            GalaxyDeleteFile.GOGFileOperations_DeleteFile_Prepare();
+            //GalaxyDeleteFile.GOGFileOperations_DeleteFile_Prepare();
         }
     }
 }
