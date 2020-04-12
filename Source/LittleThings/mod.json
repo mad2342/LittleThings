@@ -28,10 +28,6 @@
         "TrainingNotificationLimit": 4,
         "FixInterleavedDropouts": true,
 
-        "FixGalaxyDeleteSaves": false,
-        "GalaxySaveGameRelativeRootPath": "AppData\\Local\\GOG.com\\Galaxy\\Applications\\50593543263669699\\Storage\\Shared\\Files\\",
-        "GalaxySaveGameAbsolutePathOverride": "",
-
         "ShowEnemyInjuries": true,
         "SmallCombatFloaties": true,
 

@@ -22,14 +22,15 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.Debug($"[StatTooltipData_SetDurabilityData_PREFIX] Adding base Chassis.Stability value to the tooltip...");
+                    Logger.Debug($"[StatTooltipData_SetDurabilityData_PREFIX] Adding base Chassis.Stability value to the tooltip (including bonus from special gear)");
 
                     // Mostly copied from original method
                     float mechDefCurrentStructure = def.MechDefCurrentStructure;
                     float mechDefCurrentArmor = def.MechDefCurrentArmor;
                     float stabilityDefenses = 0f;
                     float dfaSelfDamage = def.Chassis.DFASelfDamage;
-                    //MAD: Add hit defense
+                    //MAD: Add hit defense, check for special gear
+                    bool hasBallisticSiegeCompensators = false;
                     float hitDefenses = 0f;
                     //DAM
                     List<float> list = new List<float>();
@@ -51,6 +52,12 @@ namespace LittleThings.Patches
                                     {
                                         list.Add(effectMod);
                                     }
+                                }
+
+                                if (upgradeDef.Description.Id == "Gear_General_GM_Ballistic_Siege_Compensators")
+                                {
+                                    hasBallisticSiegeCompensators = true;
+                                    Logger.Info($"[StatTooltipData_SetDurabilityData_PREFIX] hasBallisticSiegeCompensators: {hasBallisticSiegeCompensators}");
                                 }
                             }
                         }
@@ -74,7 +81,7 @@ namespace LittleThings.Patches
                     string stabilityDefensesStr = string.Format("{0}%", stabilityDefenses.ToString());
 
                     //MAD: Add base stability
-                    float stability = def.Chassis.Stability;
+                    float stability = def.Chassis.Stability + (hasBallisticSiegeCompensators ? 40f : 0f);
 
                     //MAD: Add hit defense (Multiply by 5 as 1f is translated to +-5% chance to hit)
                     hitDefenses = Mathf.FloorToInt(hitDefenses * 5);

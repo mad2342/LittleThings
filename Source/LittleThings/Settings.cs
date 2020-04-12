@@ -21,10 +21,6 @@
         public int TrainingNotificationLimit = 4;
         public bool FixInterleavedDropouts = true;
 
-        public bool FixGalaxyDeleteSaves = false;
-        public string GalaxySaveGameRelativeRootPath = "AppData\\Local\\GOG.com\\Galaxy\\Applications\\50593543263669699\\Storage\\Shared\\Files\\";
-        public string GalaxySaveGameAbsolutePathOverride = null;
-
         public bool ShowEnemyInjuries = true;
         public bool SmallCombatFloaties = true;
 

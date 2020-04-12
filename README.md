@@ -39,10 +39,7 @@
 - Workaround an empty contract list after priority mission on Artru
 - Fix position of Heraldry Screen Title
 - Disable highlights of some interactables in Argo's rooms
-- Works around the annoying "Undeletable Saves" Bug for GOG Galaxy users (obsolete with BTG 1.9.0)
-    - Builds path from users homedir + "GalaxySaveGameRelativeRootPath" and deletes files there if requested to do so
-    - Option to override with a full, absolute path to savegamedir added
-- Fix/Expand Stat Tooltip for Firepower
+- Fix/Expand Stat Tooltip for Firepower and Durability
     - Shows correct values for stability damage now
     - Respects special gear such as Optimized Capacitors and Ballistic Siege Compensators
     - Shows breakdown of damage depending on weapon type (Energy, Ballistic, Missile, Support)

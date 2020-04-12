@@ -60,7 +60,6 @@
     <Compile Include="Patches\ContractsTakeTime.cs" />
     <Compile Include="Patches\DFA.cs" />
     <Compile Include="Patches\EnemyInjuries.cs" />
-    <Compile Include="Patches\GalaxyDeleteFile.cs" />
     <Compile Include="Patches\HeraldryScreenTitle.cs" />
     <Compile Include="Patches\IconOverlay.cs" />
     <Compile Include="Patches\Injuries.cs" />
