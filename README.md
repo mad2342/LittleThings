@@ -4,7 +4,7 @@
 
 ## Highlights
 - Fix "Exit/Re-Enter Combat" bug for escort missions (Interleaved Dropouts)
-- Fix/Expand Stat Tooltip for Firepower
+- Fix/Expand Stat Tooltip for Firepower and Durability
     - Shows correct values for stability damage now
     - Respects special gear such as Optimized Capacitors and Ballistic Siege Compensators
     - Shows breakdown of damage depending on weapon type (Energy, Ballistic, Missile, Support)
