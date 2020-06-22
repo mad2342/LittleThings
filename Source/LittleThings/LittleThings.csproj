@@ -71,6 +71,7 @@
     <Compile Include="Patches\Morale.cs" />
     <Compile Include="Patches\PortraitRightClick.cs" />
     <Compile Include="Patches\RepairNotification.cs" />
+    <Compile Include="Patches\RepeatableFlashpoints.cs" />
     <Compile Include="Patches\Reserve.cs" />
     <Compile Include="Patches\SimGameChar.cs" />
     <Compile Include="Patches\SpawnProtection.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Patches\TrainingNotification.cs" />
     <Compile Include="Patches\InterleavedDropouts.cs" />
     <Compile Include="Patches\TutorialPopups.cs" />
+    <Compile Include="Patches\UnlockAllianceFlashpoints.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectionHelper.cs" />
     <Compile Include="Settings.cs" />

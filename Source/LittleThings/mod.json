@@ -47,6 +47,11 @@
         "ReserveEnable": false,
         "ReserveBasePercentage": 25,
 
-        "DFAsRemoveEntrenched": true
+        "DFAsRemoveEntrenched": true,
+
+        "UnlockAllianceFlashpoints": true,
+        "UnlockAllianceFlashpointsAtReputation": 100,
+
+        "RepeatableHeavyMetalCampaign": false
     }
 }
