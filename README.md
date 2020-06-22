@@ -68,6 +68,8 @@
     - At least one Urbie is preserved of course
     - On a side note: This is realized by opening up unit-selection by tags in contract.jsons (can be used for all contracts as a modders resource)
 - Shrink the combat floaties for Structure/Armor-Damage
+- Unlock Alliance FPs at configurable reputation level
+- Make Heavy Metal Campaign potentially repeatable
 
 ## Note
 - Most fixes and features can be turned on/off via settings
