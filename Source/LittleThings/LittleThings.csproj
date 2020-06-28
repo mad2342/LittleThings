@@ -62,6 +62,7 @@
     <Compile Include="Patches\EnemyInjuries.cs" />
     <Compile Include="Patches\HeraldryScreenTitle.cs" />
     <Compile Include="Patches\IconOverlay.cs" />
+    <Compile Include="Patches\InitiativeFloatie.cs" />
     <Compile Include="Patches\Injuries.cs" />
     <Compile Include="Patches\Inspire.cs" />
     <Compile Include="Patches\InventoryItem.cs" />

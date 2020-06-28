@@ -2,7 +2,7 @@
     "Name": "LittleThings",
     "Enabled": true,
 
-    "Version": "1.9.1-005R",
+    "Version": "1.9.1-006R",
     "Description": "Fix some little annoyances and change minor things.",
     "Author": "Mad",
 
@@ -27,6 +27,7 @@
         "ExpandStatTooltipDurability": true,
         "TrainingNotificationLimit": 4,
         "FixInterleavedDropouts": true,
+        "DisableInitiativeFloatieForDeadActors": true,
 
         "ShowEnemyInjuries": true,
         "SmallCombatFloaties": true,

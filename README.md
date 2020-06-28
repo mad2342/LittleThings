@@ -70,6 +70,7 @@
 - Shrink the combat floaties for Structure/Armor-Damage
 - Unlock Alliance FPs at configurable reputation level
 - Make Heavy Metal Campaign potentially repeatable
+- Disable the useless "-1 INITIATIVE" floatie for dead actors
 
 ## Note
 - Most fixes and features can be turned on/off via settings

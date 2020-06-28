@@ -20,6 +20,7 @@
         public bool ExpandStatTooltipDurability = true;
         public int TrainingNotificationLimit = 4;
         public bool FixInterleavedDropouts = true;
+        public bool DisableInitiativeFloatieForDeadActors = true;
 
         public bool ShowEnemyInjuries = true;
         public bool SmallCombatFloaties = true;
