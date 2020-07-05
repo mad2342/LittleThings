@@ -71,6 +71,8 @@
 - Unlock Alliance FPs at configurable reputation level
 - Make Heavy Metal Campaign potentially repeatable
 - Disable the useless "-1 INITIATIVE" floatie for dead actors
+- Disable Career Mode Scoring
+- Disable Heavy Metal Loot Popup
 
 ## Note
 - Most fixes and features can be turned on/off via settings
