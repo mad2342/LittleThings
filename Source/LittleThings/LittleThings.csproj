@@ -54,12 +54,14 @@
     </Compile>
     <Compile Include="LittleThings.cs" />
     <Compile Include="Patches\AbilityTooltips.cs" />
+    <Compile Include="Patches\CareerModeScoring.cs" />
     <Compile Include="Patches\ChassisHeatsinks.cs" />
     <Compile Include="Patches\Coil.cs" />
     <Compile Include="Patches\CombatFloaties.cs" />
     <Compile Include="Patches\ContractsTakeTime.cs" />
     <Compile Include="Patches\DFA.cs" />
     <Compile Include="Patches\EnemyInjuries.cs" />
+    <Compile Include="Patches\HeavyMetalLootPopup.cs" />
     <Compile Include="Patches\HeraldryScreenTitle.cs" />
     <Compile Include="Patches\IconOverlay.cs" />
     <Compile Include="Patches\InitiativeFloatie.cs" />

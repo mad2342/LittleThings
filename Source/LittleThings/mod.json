@@ -28,6 +28,8 @@
         "TrainingNotificationLimit": 4,
         "FixInterleavedDropouts": true,
         "DisableInitiativeFloatieForDeadActors": true,
+        "DisableCareerModeScoring": true,
+        "DisableHeavyMetalLootPopup": true,
 
         "ShowEnemyInjuries": true,
         "SmallCombatFloaties": true,

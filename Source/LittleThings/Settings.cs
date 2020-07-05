@@ -21,6 +21,8 @@
         public int TrainingNotificationLimit = 4;
         public bool FixInterleavedDropouts = true;
         public bool DisableInitiativeFloatieForDeadActors = true;
+        public bool DisableCareerModeScoring = true;
+        public bool DisableHeavyMetalLootPopup = true;
 
         public bool ShowEnemyInjuries = true;
         public bool SmallCombatFloaties = true;
