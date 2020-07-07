@@ -29,7 +29,7 @@
         public bool EnableEnemyInjuryFloaties = true;
         public bool EnableSmallCombatFloaties = true;
         public bool EnableAbilityTooltips = true;
-        public bool EnableStockMechReferenceViaMechDefDescriptionModel = true;
+        public bool EnableStockMechReferenceViaModel = true;
         public bool EnableChassisHeatsinks = false;
         public bool EnableSpawnProtection = false;
         public bool EnableLanceConfigurationByTags = true;

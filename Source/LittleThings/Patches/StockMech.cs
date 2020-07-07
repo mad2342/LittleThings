@@ -32,7 +32,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.EnableStockMechReferenceViaMechDefDescriptionModel;
+                return LittleThings.Settings.EnableStockMechReferenceViaModel;
             }
 
             public static bool Prefix(MechLabStockInfoPopup __instance, ref string ___stockMechDefId, MechDef ___baseMechDef, UIManager ___uiManager)

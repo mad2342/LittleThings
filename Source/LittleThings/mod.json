@@ -36,7 +36,7 @@
         "EnableEnemyInjuryFloaties": true,
         "EnableSmallCombatFloaties": true,
         "EnableAbilityTooltips": true,
-        "EnableStockMechReferenceViaMechDefDescriptionModel": true,
+        "EnableStockMechReferenceViaModel": true,
         "EnableChassisHeatsinks": false,
         "EnableSpawnProtection": false,
         "EnableLanceConfigurationByTags": true,
