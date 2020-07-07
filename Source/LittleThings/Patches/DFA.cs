@@ -11,7 +11,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.DFAsRemoveEntrenched;
+                return LittleThings.Settings.EnableDFAsRemoveEntrenched;
             }
 
             public static void Prefix(MechDFASequence __instance, ref MessageCenterMessage message)

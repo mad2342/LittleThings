@@ -27,7 +27,17 @@ namespace LittleThings.Patches
                 // Far from good but at least not broken
                 try
                 {
-                    float displayedDamage = float.Parse(__instance.DamageText.text, CultureInfo.InvariantCulture.NumberFormat);
+                    //displayedDamage = float.Parse(__instance.DamageText.text, CultureInfo.InvariantCulture.NumberFormat);
+
+                    float displayedDamage = 0;
+                    if (float.TryParse(__instance.DamageText.text, out displayedDamage))
+                    {
+                        Logger.Info($"[CombatHUDWeaponSlot_GetWeaponCOILStateColor_POSTFIX] PARSED __instance.DamageText.text ({__instance.DamageText.text}): {displayedDamage}");
+                    }
+                    else
+                    {
+                        Logger.Info($"[CombatHUDWeaponSlot_GetWeaponCOILStateColor_POSTFIX] PARSING FAILED:  __instance.DamageText.text: {__instance.DamageText.text}");
+                    }
 
                     // It's necessary to even look at the WeaponDef directly because the getter of Weapon.DamagePerShot is polluted with COIL-Logic
                     float weaponDefDamage = __instance.DisplayedWeapon.weaponDef.Damage;

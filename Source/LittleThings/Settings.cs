@@ -3,13 +3,14 @@
     internal class Settings
     {
         public bool MoraleFixes = true;
+        public bool InjuryFixes = false;
+
         public bool FixUIInventoryItems = true;
         public bool FixUIHeraldryScreen = true;
         public bool FixUIEquipmentTooltips = true;
         public bool FixUIMainNavigation = true;
-        public bool DisableTutorials = true;
-        public bool DisableSimGameCharHighlights = true;
-        public bool InjuryFixes = false;
+
+        public bool FixInterleavedDropouts = true;
         public bool FixInspire = true;
         public bool FixIconOverlayAAR = false;
         public bool FixCombatHUDPortraitRightClick = true;
@@ -17,37 +18,35 @@
         public bool FixRepairNotification = true;
         public bool FixTaurianReputationPostCampaign = true;
         public bool FixStatTooltipFirepower = true;
-        public bool ExpandStatTooltipDurability = true;
-        public int TrainingNotificationLimit = 4;
-        public bool FixInterleavedDropouts = true;
-        public bool DisableInitiativeFloatieForDeadActors = true;
+        public bool FixStatTooltipDurability = true;
+        public bool FixInitiativeFloatieForDeadActors = true;
+
+        public bool DisableTutorials = true;
+        public bool DisableSimGameCharHighlights = true;
         public bool DisableCareerModeScoring = true;
         public bool DisableHeavyMetalLootPopup = true;
 
-        public bool ShowEnemyInjuries = true;
-        public bool SmallCombatFloaties = true;
-
-        public bool ShowAbilityTooltips = true;
-        public bool ContractsTakeTime = false;
-
+        public bool EnableEnemyInjuryFloaties = true;
+        public bool EnableSmallCombatFloaties = true;
+        public bool EnableAbilityTooltips = true;
         public bool EnableStockMechReferenceViaMechDefDescriptionModel = true;
         public bool EnableChassisHeatsinks = false;
-
         public bool EnableSpawnProtection = false;
-
         public bool EnableLanceConfigurationByTags = true;
+        public bool EnableContractsTakeTime = false;
+        public bool EnableDFAsRemoveEntrenched = true;
+        public bool EnableRepeatableHeavyMetalCampaign = false;
 
-        public bool AdjustMechPartCost = true;
-        public double AdjustMechPartCostMultiplier = 0.8;
+        public bool EnableAIReserve = false;
+        public float EnableAIReserveBasePercentage = 25f;
 
-        public bool ReserveEnable = false;
-        public float ReserveBasePercentage = 25f;
+        public bool EnableAdjustedMechPartCost = true;
+        public double EnableAdjustedMechPartCostMultiplier = 0.8;
 
-        public bool DFAsRemoveEntrenched = true;
+        public bool EnableTrainingNotification = true;
+        public int EnableTrainingNotificationLimit = 4;
 
-        public bool UnlockAllianceFlashpoints = true;
-        public int UnlockAllianceFlashpointsAtReputation = 100;
-
-        public bool RepeatableHeavyMetalCampaign = false;
+        public bool EnableAllianceFlashpoints = true;
+        public int EnableAllianceFlashpointsAtReputation = 100;
     }
 }

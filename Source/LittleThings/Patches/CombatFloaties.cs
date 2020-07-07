@@ -11,7 +11,7 @@ namespace LittleThings.Patches
     {
         public static bool Prepare()
         {
-            return LittleThings.Settings.SmallCombatFloaties;
+            return LittleThings.Settings.EnableSmallCombatFloaties;
         }
 
         public static void Prefix(CombatHUDFloatieAnchor __instance, ref float fontSize, CombatGameState ___Combat)

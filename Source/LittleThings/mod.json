@@ -10,13 +10,14 @@
 
     "Settings": {
         "MoraleFixes": true,
+        "InjuryFixes": false,
+
         "FixUIInventoryItems": true,
         "FixUIHeraldryScreen": true,
         "FixUIEquipmentTooltips": true,
         "FixUIMainNavigation": true,
-        "DisableTutorials": true,
-        "DisableSimGameCharHighlights": true,
-        "InjuryFixes": false,
+
+        "FixInterleavedDropouts": true,
         "FixInspire": true,
         "FixIconOverlayAAR": false,
         "FixCombatHUDPortraitRightClick": true,
@@ -24,37 +25,35 @@
         "FixRepairNotification": true,
         "FixTaurianReputationPostCampaign": true,
         "FixStatTooltipFirepower": true,
-        "ExpandStatTooltipDurability": true,
-        "TrainingNotificationLimit": 4,
-        "FixInterleavedDropouts": true,
-        "DisableInitiativeFloatieForDeadActors": true,
+        "FixStatTooltipDurability": true,
+        "FixInitiativeFloatieForDeadActors": true,
+
+        "DisableTutorials": true,
+        "DisableSimGameCharHighlights": true,
         "DisableCareerModeScoring": true,
         "DisableHeavyMetalLootPopup": true,
 
-        "ShowEnemyInjuries": true,
-        "SmallCombatFloaties": true,
-
-        "ShowAbilityTooltips": true,
-        "ContractsTakeTime": false,
-
+        "EnableEnemyInjuryFloaties": true,
+        "EnableSmallCombatFloaties": true,
+        "EnableAbilityTooltips": true,
         "EnableStockMechReferenceViaMechDefDescriptionModel": true,
         "EnableChassisHeatsinks": false,
-
         "EnableSpawnProtection": false,
-
         "EnableLanceConfigurationByTags": true,
+        "EnableContractsTakeTime": false,
+        "EnableDFAsRemoveEntrenched": true,
+        "EnableRepeatableHeavyMetalCampaign": false,
+        
+        "EnableAIReserve": false,
+        "EnableAIReserveBasePercentage": 25,
 
-        "AdjustMechPartCost": true,
-        "AdjustMechPartCostMultiplier": 0.8,
+        "EnableAdjustedMechPartCost": true,
+        "EnableAdjustedMechPartCostMultiplier": 0.8,
 
-        "ReserveEnable": false,
-        "ReserveBasePercentage": 25,
+        "EnableTrainingNotification": true,
+        "EnableTrainingNotificationLimit": 4,
 
-        "DFAsRemoveEntrenched": true,
-
-        "UnlockAllianceFlashpoints": true,
-        "UnlockAllianceFlashpointsAtReputation": 100,
-
-        "RepeatableHeavyMetalCampaign": false
+        "EnableAllianceFlashpoints": true,
+        "EnableAllianceFlashpointsAtReputation": 100
     }
 }

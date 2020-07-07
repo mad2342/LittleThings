@@ -14,7 +14,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.RepeatableHeavyMetalCampaign;
+                return LittleThings.Settings.EnableRepeatableHeavyMetalCampaign;
             }
 
             public static void Postfix(SimGameState __instance, TagSet ___companyTags)

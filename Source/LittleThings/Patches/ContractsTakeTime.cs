@@ -12,7 +12,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.ContractsTakeTime;
+                return LittleThings.Settings.EnableContractsTakeTime;
             }
 
             // Must be prefix as CompletedContract may be set to null in original method

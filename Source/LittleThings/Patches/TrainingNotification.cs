@@ -12,14 +12,14 @@ namespace LittleThings.Patches
             public static bool Prepare()
             {
                 // Vanilla limit is hardcoded to 2
-                return LittleThings.Settings.TrainingNotificationLimit > 2;
+                return LittleThings.Settings.EnableTrainingNotification && LittleThings.Settings.EnableTrainingNotificationLimit > 2;
             }
 
             public static bool Prefix(SimGameState __instance)
             {
                 try
                 {
-                    Logger.Debug($"[SimGameState_ShowMechWarriorTrainingNotif_PREFIX] Suppressing training notification if number of trainable pilots < {LittleThings.Settings.TrainingNotificationLimit}");
+                    Logger.Debug($"[SimGameState_ShowMechWarriorTrainingNotif_PREFIX] Suppressing training notification if number of trainable pilots < {LittleThings.Settings.EnableTrainingNotificationLimit}");
 
                     int trainablePilotCount = 0;
                     foreach (Pilot pilot in __instance.PilotRoster)
@@ -45,9 +45,9 @@ namespace LittleThings.Patches
                         }
                     }
                     Logger.Info($"[SimGameState_ShowMechWarriorTrainingNotif_PREFIX] trainablePilotCount: {trainablePilotCount}");
-                    Logger.Info($"[SimGameState_ShowMechWarriorTrainingNotif_PREFIX] LittleThings.Settings.TrainingNotificationLimit: {LittleThings.Settings.TrainingNotificationLimit}");
+                    Logger.Info($"[SimGameState_ShowMechWarriorTrainingNotif_PREFIX] LittleThings.Settings.TrainingNotificationLimit: {LittleThings.Settings.EnableTrainingNotificationLimit}");
 
-                    if (trainablePilotCount >= LittleThings.Settings.TrainingNotificationLimit)
+                    if (trainablePilotCount >= LittleThings.Settings.EnableTrainingNotificationLimit)
                     {
                         return true;
                     }

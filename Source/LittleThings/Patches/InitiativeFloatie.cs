@@ -11,7 +11,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.DisableInitiativeFloatieForDeadActors;
+                return LittleThings.Settings.FixInitiativeFloatieForDeadActors;
             }
 
             public static bool Prefix(AbstractActor __instance)

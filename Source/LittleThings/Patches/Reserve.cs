@@ -11,7 +11,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.ReserveEnable;
+                return LittleThings.Settings.EnableAIReserve;
             }
 
             public static void Postfix(BehaviorTree __instance, ref BehaviorVariableValue __result, BehaviorVariableName name)
@@ -25,8 +25,8 @@ namespace LittleThings.Patches
                     }
                     else if (name == BehaviorVariableName.Float_ReserveBasePercentage)
                     {
-                        Logger.Debug("[BehaviorTree_GetBehaviorVariableValue_POSTFIX] Overriding BehaviorVariableName.Float_ReserveBasePercentage: " + LittleThings.Settings.ReserveBasePercentage);
-                        __result.FloatVal = LittleThings.Settings.ReserveBasePercentage;
+                        Logger.Debug("[BehaviorTree_GetBehaviorVariableValue_POSTFIX] Overriding BehaviorVariableName.Float_ReserveBasePercentage: " + LittleThings.Settings.EnableAIReserveBasePercentage);
+                        __result.FloatVal = LittleThings.Settings.EnableAIReserveBasePercentage;
                     }
                 }
                 catch (Exception e)

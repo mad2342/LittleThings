@@ -11,7 +11,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.ShowEnemyInjuries;
+                return LittleThings.Settings.EnableEnemyInjuryFloaties;
             }
 
             public static void Postfix(Pilot __instance)

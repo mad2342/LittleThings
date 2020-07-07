@@ -17,7 +17,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.ShowAbilityTooltips;
+                return LittleThings.Settings.EnableAbilityTooltips;
             }
 
             public static void Postfix(SGBarracksSkillPip __instance, string type, int index, bool hasPassives, AbilityDef ability)

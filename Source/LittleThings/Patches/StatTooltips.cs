@@ -15,7 +15,7 @@ namespace LittleThings.Patches
         {
             public static bool Prepare()
             {
-                return LittleThings.Settings.ExpandStatTooltipDurability;
+                return LittleThings.Settings.FixStatTooltipDurability;
             }
 
             public static bool Prefix(StatTooltipData __instance, MechDef def)
