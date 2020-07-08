@@ -73,7 +73,18 @@ namespace LittleThings.Patches
                 {
                     if (___displayedWeapon != null && ___displayedWeapon.Type == WeaponType.COIL)
                     {
-                        float displayedDamage = float.Parse(__instance.DamageText.text, CultureInfo.InvariantCulture.NumberFormat);
+                        //float displayedDamage = float.Parse(__instance.DamageText.text, CultureInfo.InvariantCulture.NumberFormat);
+
+                        float displayedDamage = 0;
+                        if (float.TryParse(__instance.DamageText.text, out displayedDamage))
+                        {
+                            Logger.Info($"[CombatHUDWeaponSlot_ShowTextColor_POSTFIX] PARSED __instance.DamageText.text ({__instance.DamageText.text}): {displayedDamage}");
+                        }
+                        else
+                        {
+                            Logger.Info($"[CombatHUDWeaponSlot_ShowTextColor_POSTFIX] PARSING FAILED:  __instance.DamageText.text: {__instance.DamageText.text}");
+                        }
+
                         float weaponDefDamage = __instance.DisplayedWeapon.weaponDef.Damage;
                         //Logger.Info($"[CombatHUDWeaponSlot_ShowTextColor_POSTFIX] displayedDamage: {displayedDamage}");
                         //Logger.Info($"[CombatHUDWeaponSlot_ShowTextColor_POSTFIX] weaponDefDamage: {weaponDefDamage}");
