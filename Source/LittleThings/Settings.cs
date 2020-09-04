@@ -20,6 +20,7 @@
         public bool FixStatTooltipFirepower = true;
         public bool FixStatTooltipDurability = true;
         public bool FixInitiativeFloatieForDeadActors = true;
+        public bool FixMechAddedHeader = true;
 
         public bool DisableTutorials = true;
         public bool DisableSimGameCharHighlights = true;

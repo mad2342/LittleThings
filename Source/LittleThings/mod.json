@@ -27,6 +27,7 @@
         "FixStatTooltipFirepower": true,
         "FixStatTooltipDurability": true,
         "FixInitiativeFloatieForDeadActors": true,
+        "FixMechAddedHeader": true,
 
         "DisableTutorials": true,
         "DisableSimGameCharHighlights": true,

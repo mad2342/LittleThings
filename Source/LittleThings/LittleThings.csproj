@@ -70,6 +70,7 @@
     <Compile Include="Patches\InventoryItem.cs" />
     <Compile Include="Patches\LanceConfigurationByTags.cs" />
     <Compile Include="Patches\MainNavigation.cs" />
+    <Compile Include="Patches\MechAddedHeader.cs" />
     <Compile Include="Patches\MechPart.cs" />
     <Compile Include="Patches\Morale.cs" />
     <Compile Include="Patches\PortraitRightClick.cs" />
