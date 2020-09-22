@@ -46,6 +46,7 @@
     <Reference Include="Unity.TextMeshPro" />
     <Reference Include="UnityEngine" />
     <Reference Include="UnityEngine.CoreModule" />
+    <Reference Include="UnityEngine.ImageConversionModule" />
     <Reference Include="UnityEngine.UI" />
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +109,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
+rd /s /q $(SolutionDir)..\Release\
 xcopy $(TargetPath) $(SolutionDir)..\Release\$(TargetName)\ /Y
 xcopy $(ProjectDir)mod.json $(SolutionDir)..\Release\$(TargetName)\ /Y
 xcopy $(ProjectDir)README.md $(SolutionDir)..\Release\$(TargetName)\ /Y
