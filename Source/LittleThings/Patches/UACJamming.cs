@@ -1,16 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
 using BattleTech;
+using BattleTech.UI;
 using Harmony;
 using Localize;
+using UnityEngine;
 
 namespace LittleThings.Patches
 {
     class UACJamming
     {
-        internal const float unjammingChanceBase = 0.82f;
-        internal static float unjammingChance = 0.82f;
+        // Represents a 2 or 3 on 2d6 roll
+        internal const float jammingChanceBase = 0.0833f;
 
+        // Helper
         public static bool IsUltraAutocannon(Weapon weapon)
         {
             return weapon.WeaponSubType == WeaponSubType.UAC2 || weapon.WeaponSubType == WeaponSubType.UAC5 || weapon.WeaponSubType == WeaponSubType.UAC10 || weapon.WeaponSubType == WeaponSubType.UAC20;
@@ -18,14 +21,13 @@ namespace LittleThings.Patches
 
         public static bool IsJammed(Weapon weapon)
         { 
-            //return weapon.StatCollection.GetStatistic("Jammed").Value<bool>();
-            
             Statistic statistic = Utilities.GetOrCreateStatistic<bool>(weapon.StatCollection, "Jammed", false);
             return statistic.Value<bool>();
         }
 
 
 
+        // Patches
         [HarmonyPatch(typeof(Weapon), "InitStats")]
         public static class Weapon_InitStats_Patch
         {
@@ -52,71 +54,6 @@ namespace LittleThings.Patches
 
 
 
-        [HarmonyPatch(typeof(AttackDirector), "CreateAttackSequence")]
-        public static class AttackDirector_CreateAttackSequence_Patch
-        {
-            public static bool Prepare()
-            {
-                return LittleThings.Settings.EnableUACJamming;
-            }
-
-            public static void Prefix(AttackDirector __instance, AttackDirector.AttackSequence __result, AbstractActor attacker, ref List<Weapon> selectedWeapons)
-            {
-                try
-                {
-                    for (int i = selectedWeapons.Count - 1; i >= 0; i--)
-                    {
-                        Weapon weapon = selectedWeapons[i];
-
-                        if (IsUltraAutocannon(weapon))
-                        {
-                            Logger.Info($"[AttackDirector_CreateAttackSequence_PREFIX] {attacker.DisplayName} tries to fire an UAC");
-
-                            float jammingChance = 0.49f;
-                            float jammingRoll = UnityEngine.Random.Range(0f, 1f);
-
-                            if (jammingRoll <= jammingChance)
-                            {
-                                Logger.Info($"[AttackDirector_CreateAttackSequence_PREFIX] {weapon.UIName} jammed");
-
-                                weapon.StatCollection.Set<bool>("Jammed", true);
-                                weapon.StatCollection.Set<bool>("TemporarilyDisabled", true);
-
-                                // Remove from selected weapons
-                                selectedWeapons.RemoveAt(i);
-
-                                __instance.Combat.MessageCenter.PublishMessage(new FloatieMessage(attacker.GUID, attacker.GUID, "UAC JAMMED", FloatieMessage.MessageNature.Debuff));
-                            }
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    Logger.Error(e);
-                }
-            }
-
-            public static void Postfix(AttackDirector __instance, AttackDirector.AttackSequence __result, AbstractActor attacker, List<Weapon> selectedWeapons)
-            {
-                try
-                {
-                    if (selectedWeapons.Count < 1)
-                    {
-                        AttackSequenceEndMessage m = new AttackSequenceEndMessage(__result.stackItemUID, __result.id);
-                        //attackSequence.chosenTarget.ResolveAttackSequence(attackSequence.attacker.GUID, sequenceId, attackSequence.stackItemUID, this.Combat.HitLocation.GetAttackDirection(attackSequence.attackPosition, attackSequence.chosenTarget));
-                        __instance.Combat.MessageCenter.PublishMessage(m);
-                    }
-                    
-                }
-                catch (Exception e)
-                {
-                    Logger.Error(e);
-                }
-            }
-        }
-
-
-
         [HarmonyPatch(typeof(AbstractActor), "OnActivationEnd")]
         public static class AbstractActor_OnActivationEnd_Patch
         {
@@ -129,17 +66,44 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.Info($"[AbstractActor_OnActivationEnd_PREFIX] {__instance.DisplayName} HasFiredThisRound: {__instance.HasFiredThisRound}");
+                    //Logger.Info($"[AbstractActor_OnActivationEnd_PREFIX] {__instance.DisplayName}");
 
-                    if (!__instance.HasFiredThisRound)
+                    if (__instance.IsShutDown)
                     {
-                        unjammingChance += 0.9f;
+                        return;
                     }
-                    else
+
+                    foreach (Weapon weapon in __instance.Weapons)
                     {
-                        unjammingChance = unjammingChanceBase;
+                        if (IsUltraAutocannon(weapon))
+                        {
+                            // Already jammed
+                            if (IsJammed(weapon))
+                            {
+                                Logger.Info($"[AbstractActor_OnActivationEnd_PREFIX] {weapon.Name} is jammed");
+                            }
+                            // Fired this round
+                            else if (weapon.roundsSinceLastFire == 0)
+                            {
+                                Logger.Info($"[AbstractActor_OnActivationEnd_PREFIX] {weapon.Name} was fired this round");
+                                Logger.Info($"[AbstractActor_OnActivationEnd_PREFIX] {weapon.Name} is checked for a potential jam");
+
+                                float jammingChance = jammingChanceBase;
+                                float jammingRoll = UnityEngine.Random.Range(0f, 1f);
+                                Logger.Info($"[AbstractActor_OnActivationEnd_PREFIX] Rolled {jammingRoll} against {jammingChance}");
+
+                                if (jammingRoll <= jammingChance)
+                                {
+                                    Logger.Info($"[AbstractActor_OnActivationEnd_PREFIX] {weapon.Name} got jammed");
+
+                                    weapon.StatCollection.Set<bool>("Jammed", true);
+                                    weapon.StatCollection.Set<bool>("TemporarilyDisabled", true);
+
+                                    __instance.Combat.MessageCenter.PublishMessage(new FloatieMessage(__instance.GUID, __instance.GUID, "UAC JAMMED", FloatieMessage.MessageNature.Debuff));
+                                }
+                            }
+                        }
                     }
-                    Logger.Info($"[AbstractActor_OnActivationEnd_PREFIX] {__instance.DisplayName} unjammingChance: {unjammingChance}");
                 }
                 catch (Exception e)
                 {
@@ -162,20 +126,25 @@ namespace LittleThings.Patches
             {
                 try
                 {
-                    Logger.Info($"[AbstractActor_OnNewRound_PREFIX] {__instance.DisplayName}");
+                    //Logger.Info($"[AbstractActor_OnNewRound_PREFIX] {__instance.DisplayName}");
 
                     foreach (Weapon weapon in __instance.Weapons)
                     {
                         if (IsUltraAutocannon(weapon) && IsJammed(weapon))
                         {
-                            Logger.Info($"[AbstractActor_OnNewRound_PREFIX] {__instance.DisplayName} tries to unjam an UAC");
+                            Logger.Info($"[AbstractActor_OnNewRound_PREFIX] {__instance.DisplayName} tries to unjam an {weapon.Name}");
+                            Logger.Info($"[AbstractActor_OnNewRound_PREFIX] {weapon.Name} wasn't fired for {weapon.roundsSinceLastFire} rounds");
 
+                            //float unjammingBase = jammingChanceBase;
+                            float unjammingBase = weapon.roundsSinceLastFire > 0 ? jammingChanceBase : 0.0f; // Jammed for at least 1 turn!
+                            float unjammingModifier = weapon.roundsSinceLastFire * ((float)__instance.GetPilot().Gunnery / 10);
+                            float unjammingChance = Mathf.Min(1f, unjammingBase + unjammingModifier);
                             float unjammingRoll = UnityEngine.Random.Range(0f, 1f);
-                            Logger.Info($"[AbstractActor_OnNewRound_PREFIX] Rolled {unjammingRoll} against {unjammingChance}");
+                            Logger.Info($"[AbstractActor_OnNewRound_PREFIX] Rolled {unjammingRoll} against {unjammingChance} ({unjammingBase} + {unjammingModifier})");
 
                             if (unjammingRoll <= unjammingChance)
                             {
-                                Logger.Info($"[AbstractActor_OnNewRound_PREFIX] {weapon.UIName} unjammed");
+                                Logger.Info($"[AbstractActor_OnNewRound_PREFIX] {weapon.Name} was unjammed");
 
                                 __instance.Combat.MessageCenter.PublishMessage(new FloatieMessage(__instance.GUID, __instance.GUID, "UAC UNJAMMED", FloatieMessage.MessageNature.Buff));
 
@@ -214,7 +183,43 @@ namespace LittleThings.Patches
                     Weapon weapon = (Weapon)__instance;
                     if (IsJammed(weapon))
                     {
-                        __result.Append(" (JAM)", new object[0]);
+                        string originalUIName = __result.ToString();
+                        string weaponCaliber = new String(originalUIName.Where(Char.IsDigit).ToArray());
+
+                        __result = new Localize.Text($"JAMMED <size=75%>(UAC/{weaponCaliber})</size>", new object[] { });
+
+                        //__result.Append(" <size=75%>( JAMMED )</size>", new object[0]);
+                        //__result = new Localize.Text("UAC JAMMED", new object[] { });
+                    }
+                }
+                catch (Exception e)
+                {
+                    Logger.Error(e);
+                }
+            }
+        }
+
+
+
+        [HarmonyPatch(typeof(CombatHUDWeaponSlot), "UpdateToolTipsSelf")]
+        public static class CombatHUDWeaponSlot_UpdateToolTipsSelf_Patch
+        {
+            public static bool Prepare()
+            {
+                return LittleThings.Settings.EnableUACJamming;
+            }
+
+            public static void Postfix(CombatHUDWeaponSlot __instance)
+            {
+                try
+                {
+                    Weapon weapon = __instance.DisplayedWeapon;
+
+                    if (IsUltraAutocannon(weapon) && IsJammed(weapon))
+                    {
+                        //Logger.Info($"[CombatHUDWeaponSlot_UpdateToolTipsSelf_POSTFIX] Adding tooltip details for jammed UAC");
+
+                        __instance.ToolTipHoverElement.DebuffStrings.Add(new Text("JAMMED", new object[]{ }));
                     }
                 }
                 catch (Exception e)

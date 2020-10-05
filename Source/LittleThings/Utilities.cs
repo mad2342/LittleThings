@@ -13,7 +13,6 @@ namespace LittleThings
             {
                 statistic = collection.AddStatistic<StatisticType>(statName, defaultValue);
             }
-
             return statistic;
         }
 
