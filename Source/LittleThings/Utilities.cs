@@ -5,6 +5,20 @@ namespace LittleThings
 {
     public static class Utilities
     {
+        public static Statistic GetOrCreateStatistic<StatisticType>(StatCollection collection, string statName, StatisticType defaultValue)
+        {
+            Statistic statistic = collection.GetStatistic(statName);
+
+            if (statistic == null)
+            {
+                statistic = collection.AddStatistic<StatisticType>(statName, defaultValue);
+            }
+
+            return statistic;
+        }
+
+
+
         // Rebuilt from StatTooltipData.GetEffectMod() to be used in the prefix patch of StatTooltipData.SetDurabilityData()
         public static float GetEffectMod(EffectData effectData, string statName, StatisticEffectData.TargetCollection target, StatCollection.StatOperation operation, WeaponSubType subTarget = WeaponSubType.NotSet)
         {

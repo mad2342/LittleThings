@@ -44,6 +44,7 @@
         "EnableContractsTakeTime": false,
         "EnableDFAsRemoveEntrenched": true,
         "EnableRepeatableHeavyMetalCampaign": false,
+        "EnableUACJamming": true,
         
         "EnableAIReserve": false,
         "EnableAIReserveBasePercentage": 25,

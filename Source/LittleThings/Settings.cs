@@ -37,6 +37,7 @@
         public bool EnableContractsTakeTime = false;
         public bool EnableDFAsRemoveEntrenched = true;
         public bool EnableRepeatableHeavyMetalCampaign = false;
+        public bool EnableUACJamming = true;
 
         public bool EnableAIReserve = false;
         public float EnableAIReserveBasePercentage = 25f;
