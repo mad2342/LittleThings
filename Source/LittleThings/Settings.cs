@@ -1,4 +1,6 @@
-﻿namespace LittleThings
+﻿using System.Collections.Generic;
+
+namespace LittleThings
 {
     internal class Settings
     {
@@ -34,10 +36,16 @@
         public bool EnableChassisHeatsinks = false;
         public bool EnableSpawnProtection = false;
         public bool EnableLanceConfigurationByTags = true;
-        public bool EnableContractsTakeTime = false;
+        public bool EnableContractsTakeTime = true;
         public bool EnableDFAsRemoveEntrenched = true;
         public bool EnableRepeatableHeavyMetalCampaign = false;
         public bool EnableUACJamming = true;
+        public bool EnableSmartIndirectFire = true;
+        public bool EnableCustomColors = true;
+        public Dictionary<string, bool> EnableChassisClassification = new Dictionary<string, bool>();
+
+        public bool EnableMechScaling = true;
+        public Dictionary<string, float> EnableMechScalingChassisScaleFactors = new Dictionary<string, float>();
 
         public bool EnableAIReserve = false;
         public float EnableAIReserveBasePercentage = 25f;

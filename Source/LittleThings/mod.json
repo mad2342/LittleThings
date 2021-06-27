@@ -41,10 +41,30 @@
         "EnableChassisHeatsinks": false,
         "EnableSpawnProtection": false,
         "EnableLanceConfigurationByTags": true,
-        "EnableContractsTakeTime": false,
+        "EnableContractsTakeTime": true,
         "EnableDFAsRemoveEntrenched": true,
         "EnableRepeatableHeavyMetalCampaign": false,
         "EnableUACJamming": true,
+        "EnableSmartIndirectFire": false,
+        "EnableCustomColors": true,
+        "EnableChassisClassification":
+        {
+            "MechLab": true,
+            "MechBayInfo": true,
+            "MechBaySlot": true,
+            "Tooltips": true
+        },
+
+        "EnableMechScaling": true,
+        "EnableMechScalingChassisScaleFactors":
+        {
+            "chassisdef_rifleman_RFL-3N-2": 1.375,
+            "chassisdef_marauder_MAD-4A": 1.375,
+            "chassisdef_marauder_MAD-5A": 1.375,
+            "chassisdef_bullshark_BSK-M3": 1.1875,
+            "chassisdef_bullshark_BSK-MAZ": 1.1875
+        },
+
         
         "EnableAIReserve": false,
         "EnableAIReserveBasePercentage": 25,

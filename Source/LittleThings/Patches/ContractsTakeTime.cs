@@ -15,12 +15,11 @@ namespace LittleThings.Patches
                 return LittleThings.Settings.EnableContractsTakeTime;
             }
 
-            // Must be prefix as CompletedContract may be set to null in original method
-            public static void Prefix(SimGameState __instance)
+            public static void Postfix(SimGameState __instance)
             {
                 try
                 {
-                    Logger.Debug("[SimGameState_ResolveCompleteContract_PREFIX] Calling OnDayPassed(0) now...");
+                    Logger.Debug("[SimGameState_ResolveCompleteContract_POSTFIX] Calling OnDayPassed(0) now...");
 
                     // Get and call private method on SimGameState __instance
                     MethodInfo ___onDayPassed = __instance.GetType().GetMethod("OnDayPassed", BindingFlags.NonPublic | BindingFlags.Instance);

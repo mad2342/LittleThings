@@ -87,9 +87,13 @@ namespace LittleThings.Patches
                     hitDefenses = Mathf.FloorToInt(hitDefenses * 5);
                     string hitDefensesStr = string.Format("{0}%", hitDefenses.ToString());
 
+                    //MAD: Add armor weight
+                    string armorTonnage = Math.Round((decimal)(mechDefCurrentArmor * UnityGameInstance.BattleTechGame.MechStatisticsConstants.TONNAGE_PER_ARMOR_POINT),2).ToString("F2").Replace(".", ",");
+                    string armorStr = $"{mechDefCurrentArmor} ({armorTonnage} tons)";
+
                     //MAD: Modified/Expanded output (Column 1)
                     __instance.dataList.Add(Strings.T("Structure"), mechDefCurrentStructure.ToString());
-                    __instance.dataList.Add(Strings.T("Armor"), mechDefCurrentArmor.ToString());
+                    __instance.dataList.Add(Strings.T("Armor"), armorStr);
                     __instance.dataList.Add(Strings.T("Stability"), stability.ToString());
                     // Column 2
                     __instance.dataList.Add(Strings.T("DFA Self Dmg"), dfaSelfDamage.ToString());
@@ -241,7 +245,7 @@ namespace LittleThings.Patches
                 string energyDmgStr = $"{energyDmg}";
                 if (hasOptimizedCapacitors)
                 {
-                    float additionalEnergyDmg = (energyDmg * 0.2f);
+                    int additionalEnergyDmg = (int)Math.Round(energyDmg * 0.2f);
                     Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] additionalEnergyDmg: {additionalEnergyDmg}");
 
                     allDmg += additionalEnergyDmg;
@@ -251,7 +255,7 @@ namespace LittleThings.Patches
                 string ballisticDmgStr = $"{ballisticDmg}";
                 if (hasBallisticSiegeCompensators)
                 {
-                    float additionalBallisticDmg = (ballisticDmg * 0.2f);
+                    int additionalBallisticDmg = (int)Math.Round(ballisticDmg * 0.2f);
                     Logger.Info($"[StatTooltipData_SetFirepowerData_PREFIX] additionalBallisticDmg: {additionalBallisticDmg}");
 
                     allDmg += additionalBallisticDmg;

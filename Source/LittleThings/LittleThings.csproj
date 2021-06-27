@@ -60,8 +60,10 @@
     <Compile Include="Patches\Coil.cs" />
     <Compile Include="Patches\CombatFloaties.cs" />
     <Compile Include="Patches\ContractsTakeTime.cs" />
+    <Compile Include="Patches\CustomColors.cs" />
     <Compile Include="Patches\DFA.cs" />
     <Compile Include="Patches\EnemyInjuries.cs" />
+    <Compile Include="Patches\ChassisClassification.cs" />
     <Compile Include="Patches\HeavyMetalLootPopup.cs" />
     <Compile Include="Patches\HeraldryScreenTitle.cs" />
     <Compile Include="Patches\IconOverlay.cs" />
@@ -73,12 +75,14 @@
     <Compile Include="Patches\MainNavigation.cs" />
     <Compile Include="Patches\MechAddedHeader.cs" />
     <Compile Include="Patches\MechPart.cs" />
+    <Compile Include="Patches\MechScaling.cs" />
     <Compile Include="Patches\Morale.cs" />
     <Compile Include="Patches\PortraitRightClick.cs" />
     <Compile Include="Patches\RepairNotification.cs" />
     <Compile Include="Patches\RepeatableFlashpoints.cs" />
     <Compile Include="Patches\Reserve.cs" />
     <Compile Include="Patches\SimGameChar.cs" />
+    <Compile Include="Patches\SmartIndirectFire.cs" />
     <Compile Include="Patches\SpawnProtection.cs" />
     <Compile Include="Patches\StatTooltips.cs" />
     <Compile Include="Patches\StockMech.cs" />

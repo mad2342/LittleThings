@@ -1,5 +1,8 @@
 ﻿using System;
+using BattleTech;
+using BattleTech.Data;
 using BattleTech.UI;
+using BattleTech.UI.TMProWrapper;
 using Harmony;
 using TMPro;
 using UnityEngine.Events;
@@ -39,7 +42,6 @@ namespace LittleThings.Patches
                     ___SelectedItemWidget.bonusStat2.enableAutoSizing = false;
                     ___SelectedItemWidget.bonusStat2.enableWordWrapping = false;
                     ___SelectedItemWidget.bonusStat2.overflowMode = TextOverflowModes.Overflow;
-
                 }
                 catch (Exception e)
                 {
@@ -78,7 +80,6 @@ namespace LittleThings.Patches
                     __instance.bonusStat2.enableAutoSizing = false;
                     __instance.bonusStat2.enableWordWrapping = false;
                     __instance.bonusStat2.overflowMode = TextOverflowModes.Overflow;
-
                 }
                 catch (Exception e)
                 {
@@ -117,7 +118,39 @@ namespace LittleThings.Patches
                     __instance.bonusStat2.enableAutoSizing = false;
                     __instance.bonusStat2.enableWordWrapping = false;
                     __instance.bonusStat2.overflowMode = TextOverflowModes.Overflow;
+                }
+                catch (Exception e)
+                {
+                    Logger.Error(e);
+                }
+            }
+        }
 
+
+
+        // Don't wrap component name in mech inventory
+        [HarmonyPatch(typeof(MechLabItemSlotElement), "SetData", new Type[] { typeof(MechComponentRef), typeof(ChassisLocations), typeof(DataManager), typeof(IMechLabDropTarget) })]
+        public static class MechLabItemSlotElement_SetData_Patch
+        {
+            public static bool Prepare()
+            {
+                return LittleThings.Settings.FixUIInventoryItems;
+            }
+
+            public static void Postfix(MechLabItemSlotElement __instance, MechComponentRef componentRef, LocalizableText ___nameText, LocalizableText ___bonusTextA, LocalizableText ___bonusTextB)
+            {
+                try
+                {
+                    ___nameText.enableAutoSizing = false;
+                    ___nameText.enableWordWrapping = false;
+                    ___nameText.overflowMode = TextOverflowModes.Overflow;
+
+                    // Hide bonus texts for fixed equipment
+                    if (componentRef.IsFixed)
+                    {
+                        ___bonusTextA.gameObject.SetActive(false);
+                        ___bonusTextB.gameObject.SetActive(false);
+                    }
                 }
                 catch (Exception e)
                 {
